@@ -148,12 +148,12 @@ const Footer = () => {
                 Marketplace
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>Buyer Protection</FooterExtLink>
-                <FooterExtLink>Transport Quote</FooterExtLink>
-                <FooterExtLink>Request Shipping Quote</FooterExtLink>
-                <FooterExtLink>Verified Sellers</FooterExtLink>
+                <FooterLink to="/buyer-terms">Buyer Protection</FooterLink>
+                <FooterLink to="/shipping">Transport Quote</FooterLink>
+                <FooterLink to="/shipping">Request Shipping Quote</FooterLink>
+                <FooterLink to="/catalog">Verified Sellers</FooterLink>
                 <FooterLink to="/catalog">Wholesale Orders</FooterLink>
-                <FooterExtLink>Business Accounts</FooterExtLink>
+                <FooterLink to="/contact">Business Accounts</FooterLink>
               </ul>
             </div>
 
