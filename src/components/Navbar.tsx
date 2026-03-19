@@ -32,6 +32,14 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <Link to="/cart" className="relative p-2 text-muted-foreground hover:text-foreground transition-colors">
+            <ShoppingCart className="h-5 w-5" />
+            {cartCount > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center min-w-[18px] h-[18px]">
+                {cartCount}
+              </span>
+            )}
+          </Link>
           <Button variant="ghost" size="sm" asChild><Link to="/login">Sign In</Link></Button>
           <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
         </div>
