@@ -16,15 +16,15 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <div className="flex items-center gap-2">
           <img src={logo} alt="Loadify Market" className="h-9 w-9" />
-          <span className="font-display text-xl font-bold tracking-tight text-foreground">
+          <span className="font-display text-xl font-bold tracking-tight text-foreground whitespace-nowrap">
             Loadify <span className="text-primary">Market</span>
           </span>
         </div>
 
         {/* Desktop search */}
-        <NavbarSearch className="hidden lg:block w-72 xl:w-96" />
+        <NavbarSearch className="hidden lg:block w-48 xl:w-72 2xl:w-96" />
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8">
           <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Catalog</Link>
           <Link to="/clearance" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Deals</Link>
           <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Categories</Link>
