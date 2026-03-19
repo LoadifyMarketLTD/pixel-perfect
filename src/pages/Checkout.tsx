@@ -55,12 +55,15 @@ const Checkout = () => {
 
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          {/* Back */}
-          <div className="py-4">
-            <Link to="/cart" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="h-4 w-4" /> Back to Cart
-            </Link>
-          </div>
+          <BreadcrumbNav
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Cart", to: "/cart" },
+              { label: "Checkout" },
+            ]}
+            backTo="/cart"
+            backLabel="Back to Cart"
+          />
 
           {/* Steps */}
           <div className="flex items-center justify-center gap-2 mb-10">

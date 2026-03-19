@@ -130,12 +130,15 @@ const Deals = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
           </div>
           <div className="relative container mx-auto px-4 py-12">
-            <div className="inline-flex items-center gap-2 text-sm mb-3 bg-foreground/60 backdrop-blur-sm px-3 py-1 rounded-full">
-              <Link to="/" className="text-background/90 hover:text-background transition-colors font-medium">Home</Link>
-              <span className="text-background/50">/</span>
-              <Link to="/catalog" className="text-background/90 hover:text-background transition-colors font-medium">Catalog</Link>
-              <span className="text-background/50">/</span>
-              <span className="text-background font-semibold">Clearance</span>
+            <div className="inline-flex bg-foreground/60 backdrop-blur-sm px-3 py-1 rounded-full [&_nav]:text-background/90 [&_a]:text-background/90 [&_a:hover]:text-background [&_span]:text-background [&_svg]:text-background/50">
+              <BreadcrumbNav
+                items={[
+                  { label: "Home", to: "/" },
+                  { label: "Catalog", to: "/catalog" },
+                  { label: "Clearance" },
+                ]}
+                showBack={false}
+              />
             </div>
 
             <div className="max-w-3xl">

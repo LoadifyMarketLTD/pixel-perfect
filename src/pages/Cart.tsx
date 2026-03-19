@@ -79,8 +79,16 @@ const Cart = () => {
 
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
+          <BreadcrumbNav
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Catalog", to: "/catalog" },
+              { label: "Shopping Cart" },
+            ]}
+            backTo="/catalog"
+          />
           {/* Header */}
-          <div className="py-6 flex items-center justify-between">
+          <div className="flex items-center justify-between">
             <div>
               <h1 className="font-display text-2xl sm:text-3xl font-bold text-foreground">Shopping Cart</h1>
               <p className="text-sm text-muted-foreground mt-1">{cartItems.length} {cartItems.length === 1 ? "item" : "items"} in your cart</p>
