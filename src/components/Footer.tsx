@@ -20,10 +20,10 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <p className="font-display font-semibold text-foreground text-sm sm:text-base">
-              Stay ahead of the best wholesale &amp; clearance deals
+              Find what you need — or sell what you don't
             </p>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              Discover pallet drops, verified sellers and bulk offers across the UK — all in one place.
+              Browse thousands of listings from verified sellers across the UK, or start selling today.
             </p>
           </div>
           <Link to="/catalog" className="shrink-0">
@@ -90,7 +90,7 @@ const Footer = () => {
                 About Loadify Market
               </h4>
               <p className="text-sm text-background/60 leading-relaxed mb-4">
-                UK multi-category marketplace connecting buyers and sellers of pallets, wholesale &amp; clearance stock.
+                An open UK marketplace platform where individuals and businesses can buy and sell products across all categories.
               </p>
               <div className="text-xs text-background/40 space-y-1.5">
                 <p className="font-semibold text-background/60">Operated by</p>
@@ -117,12 +117,12 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/catalog">Browse Marketplace</FooterLink>
-                <FooterLink to="/catalog">Wholesale &amp; Pallets</FooterLink>
-                <FooterLink to="/catalog">Amazon Returns</FooterLink>
                 <FooterLink to="/catalog">Electronics</FooterLink>
-                <FooterLink to="/catalog">Fashion</FooterLink>
+                <FooterLink to="/catalog">Fashion &amp; Clothing</FooterLink>
                 <FooterLink to="/catalog">Home &amp; Garden</FooterLink>
+                <FooterLink to="/catalog">Sports &amp; Leisure</FooterLink>
                 <FooterLink to="/catalog">Automotive</FooterLink>
+                <FooterLink to="/catalog">All Categories</FooterLink>
                 <FooterLink to="/dashboard/orders">Track Order</FooterLink>
                 <FooterLink to="/contact">Help &amp; FAQ</FooterLink>
               </ul>
@@ -151,11 +151,10 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/buyer-terms">Buyer Protection</FooterLink>
-                <FooterLink to="/shipping">Transport Quote</FooterLink>
-                <FooterLink to="/shipping">Request Shipping Quote</FooterLink>
                 <FooterLink to="/catalog">Verified Sellers</FooterLink>
-                <FooterLink to="/catalog">Wholesale Orders</FooterLink>
-                <FooterLink to="/contact">Business Accounts</FooterLink>
+                <FooterLink to="/shipping">Shipping &amp; Delivery</FooterLink>
+                <FooterLink to="/returns">Returns &amp; Refunds</FooterLink>
+                <FooterLink to="/contact">Report a Problem</FooterLink>
               </ul>
             </div>
 
@@ -167,9 +166,7 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/about">About Us</FooterLink>
                 <FooterLink to="/contact">Contact Us</FooterLink>
-                <FooterLink to="/contact">Help Centre</FooterLink>
-                <FooterLink to="/contact">Support</FooterLink>
-                <FooterLink to="/contact">Business Enquiries</FooterLink>
+                <FooterLink to="/contact">Help &amp; Support</FooterLink>
               </ul>
             </div>
 
@@ -200,7 +197,7 @@ const Footer = () => {
             <div className="text-xs text-background/40 text-center md:text-left">
               <p>© 2026 Loadify Market. All rights reserved.</p>
               <p className="mt-1">
-                Loadify Market is an online marketplace connecting independent buyers and sellers. We do not own or sell any products listed on the platform. Sellers are solely responsible for their listings. Payments are processed securely.
+                Loadify Market is an online marketplace platform that connects independent buyers and sellers. We do not own, stock, or sell any products listed on the platform. All listings are created by independent sellers who are solely responsible for their products, pricing and fulfilment. Payments are processed securely via third-party providers.
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
