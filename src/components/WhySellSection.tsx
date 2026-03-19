@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Users, Package, PoundSterling } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, Package, PoundSterling, Star, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
