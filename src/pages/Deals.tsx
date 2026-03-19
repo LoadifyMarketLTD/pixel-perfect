@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { X, Package, Tag, RotateCcw, Layers, TrendingDown, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import Footer from "@/components/Footer";
 import CatalogFilters from "@/components/catalog/CatalogFilters";
 import CatalogHeader from "@/components/catalog/CatalogHeader";
