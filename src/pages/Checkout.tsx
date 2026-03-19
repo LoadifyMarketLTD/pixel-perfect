@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   ArrowLeft, ArrowRight, CreditCard, MapPin, User, Phone, Mail,
-  Building2, ShieldCheck, Lock, Truck, Check
+  Building2, ShieldCheck, Lock, Truck, Check, CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,14 +10,7 @@ import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import { mockProducts } from "@/data/mockProducts";
-
-// Simulated cart summary
-const cartSummary = [
-  { product: mockProducts[0], quantity: 1 },
-  { product: mockProducts[1], quantity: 2 },
-  { product: mockProducts[5], quantity: 1 },
-];
+import { useCart } from "@/contexts/CartContext";
 
 const steps = [
   { id: "shipping", label: "Shipping", icon: Truck },
@@ -26,7 +19,10 @@ const steps = [
 ];
 
 const Checkout = () => {
+  const { cartItems, subtotal, clearCart } = useCart();
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
+  const [orderPlaced, setOrderPlaced] = useState(false);
   const [shippingData, setShippingData] = useState({
     firstName: "",
     lastName: "",
@@ -44,10 +40,71 @@ const Checkout = () => {
     setShippingData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const subtotal = cartSummary.reduce((s, i) => s + i.product.price * i.quantity, 0);
   const shipping = subtotal > 2000 ? 0 : 149;
   const vat = Math.round(subtotal * 0.2);
   const total = subtotal + shipping + vat;
+
+  const handlePlaceOrder = () => {
+    setOrderPlaced(true);
+    clearCart();
+  };
+
+  // Redirect to cart if empty and no order placed
+  if (cartItems.length === 0 && !orderPlaced) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main className="pt-24 pb-16">
+          <div className="container mx-auto px-4 text-center py-20">
+            <h1 className="font-display text-2xl font-bold text-foreground mb-4">Your cart is empty</h1>
+            <p className="text-muted-foreground mb-6">Add some items before checking out.</p>
+            <Link to="/catalog">
+              <Button className="bg-gradient-hero text-primary-foreground font-semibold">
+                Browse Catalog <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Order confirmation screen
+  if (orderPlaced) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main className="pt-24 pb-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-lg mx-auto text-center space-y-6 py-16">
+              <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto">
+                <CheckCircle2 className="h-10 w-10 text-emerald-500" />
+              </div>
+              <h1 className="font-display text-3xl font-bold text-foreground">Order Placed!</h1>
+              <p className="text-muted-foreground text-lg">
+                Thank you for your order. Your order reference is <span className="font-semibold text-foreground">#{Math.random().toString(36).substring(2, 10).toUpperCase()}</span>.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                You'll receive a confirmation email shortly. This is a demo — no real payment has been processed.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                <Link to="/catalog">
+                  <Button className="bg-gradient-hero text-primary-foreground font-semibold">
+                    Continue Shopping <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/dashboard/orders">
+                  <Button variant="outline">View Orders</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -290,7 +347,7 @@ const Checkout = () => {
                   <div className="bg-card rounded-xl border border-border p-6 space-y-4">
                     <h3 className="font-display font-semibold text-foreground">Order Items</h3>
                     <div className="space-y-3">
-                      {cartSummary.map((item) => (
+                      {cartItems.map((item) => (
                         <div key={item.product.id} className="flex items-center gap-3">
                           <div className="w-14 h-14 rounded-lg overflow-hidden bg-muted shrink-0">
                             <img src={item.product.image} alt={item.product.title} className="w-full h-full object-cover" />
@@ -311,7 +368,10 @@ const Checkout = () => {
                     <Button variant="outline" onClick={() => setCurrentStep(1)} className="h-11">
                       <ArrowLeft className="mr-2 h-4 w-4" /> Back
                     </Button>
-                    <Button className="flex-1 h-12 bg-gradient-accent text-accent-foreground font-bold text-base hover:opacity-90 transition-opacity">
+                    <Button
+                      onClick={handlePlaceOrder}
+                      className="flex-1 h-12 bg-gradient-accent text-accent-foreground font-bold text-base hover:opacity-90 transition-opacity"
+                    >
                       <Lock className="mr-2 h-5 w-5" />
                       Place Order · £{total.toLocaleString()}
                     </Button>
@@ -326,7 +386,7 @@ const Checkout = () => {
                 <h2 className="font-display text-lg font-semibold text-foreground">Order Summary</h2>
 
                 <div className="space-y-3">
-                  {cartSummary.map((item) => (
+                  {cartItems.map((item) => (
                     <div key={item.product.id} className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-lg overflow-hidden bg-muted shrink-0">
                         <img src={item.product.image} alt="" className="w-full h-full object-cover" />

@@ -2,8 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight, Package, MapPin, Clock, Eye, Tag,
-  Truck, ShieldCheck, MessageSquare
+  Truck, ShieldCheck, MessageSquare, ShoppingCart
 } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import type { Product } from "@/components/catalog/ProductCard";
+import { toast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 interface ProductInfoProps {
   title: string;
@@ -16,6 +20,7 @@ interface ProductInfoProps {
   unitCount: number;
   views: number;
   listed: string;
+  product: Product;
 }
 
 const conditionColor: Record<string, string> = {
@@ -37,10 +42,27 @@ const ProductInfo = ({
   unitCount,
   views,
   listed,
+  product,
 }: ProductInfoProps) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
   const discount = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
     : 0;
+
+  const handleBuyNow = () => {
+    addToCart(product);
+    navigate("/cart");
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    toast({
+      title: "Added to cart",
+      description: `${title} has been added to your cart.`,
+    });
+  };
 
   return (
     <div className="space-y-6">
@@ -129,12 +151,21 @@ const ProductInfo = ({
 
       {/* CTA buttons */}
       <div className="flex flex-col sm:flex-row gap-3">
-        <Button size="lg" className="flex-1 bg-gradient-accent text-accent-foreground font-semibold text-base hover:opacity-90 transition-opacity">
+        <Button
+          size="lg"
+          className="flex-1 bg-gradient-accent text-accent-foreground font-semibold text-base hover:opacity-90 transition-opacity"
+          onClick={handleBuyNow}
+        >
           Buy Now <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-        <Button size="lg" variant="outline" className="flex-1 text-base">
-          <MessageSquare className="mr-2 h-5 w-5" />
-          Contact Seller
+        <Button
+          size="lg"
+          variant="outline"
+          className="flex-1 text-base"
+          onClick={handleAddToCart}
+        >
+          <ShoppingCart className="mr-2 h-5 w-5" />
+          Add to Cart
         </Button>
       </div>
     </div>

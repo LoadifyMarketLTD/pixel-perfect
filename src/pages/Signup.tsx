@@ -203,8 +203,8 @@ const Signup = () => {
 
             <p className="text-xs text-center text-muted-foreground">
               By creating an account you agree to our{" "}
-              <a href="#" className="text-primary hover:underline">Terms of Service</a> and{" "}
-              <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+              <Link to="/terms" className="text-primary hover:underline">Terms of Service</Link> and{" "}
+              <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
             </p>
           </form>
 
