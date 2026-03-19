@@ -70,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-card border-b border-border px-4 py-4 space-y-3">
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Catalog</Link>
           <Link to="/clearance" className="block text-sm font-medium text-muted-foreground">Deals</Link>
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Categories</Link>
