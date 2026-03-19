@@ -168,11 +168,11 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>About Us</FooterExtLink>
-                <FooterExtLink>Contact Us</FooterExtLink>
+                <FooterLink to="/about">About Us</FooterLink>
+                <FooterLink to="/contact">Contact Us</FooterLink>
                 <FooterExtLink>Help Centre</FooterExtLink>
                 <FooterExtLink>Support</FooterExtLink>
-                <FooterExtLink>Business Enquiries</FooterExtLink>
+                <FooterLink to="/contact">Business Enquiries</FooterLink>
               </ul>
             </div>
 
