@@ -11,11 +11,6 @@ const FooterLink = ({ to, children }: { to: string; children: React.ReactNode })
   </li>
 );
 
-const FooterExtLink = ({ children }: { children: React.ReactNode }) => (
-  <li>
-    <span className="cursor-default opacity-60">{children}</span>
-  </li>
-);
 
 const Footer = () => {
   return (
