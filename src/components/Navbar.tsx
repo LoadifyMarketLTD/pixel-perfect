@@ -44,8 +44,8 @@ const Navbar = () => {
           <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
         </div>
 
-        {/* Mobile buttons */}
-        <div className="flex md:hidden items-center gap-1">
+        {/* Mobile/tablet buttons */}
+        <div className="flex lg:hidden items-center gap-1">
           <button
             className="text-foreground p-2"
             onClick={() => { setMobileSearchOpen(!mobileSearchOpen); setMobileOpen(false); }}
