@@ -26,6 +26,14 @@ import {
   AdminUsers, AdminProducts, AdminOrders, AdminReports,
   AdminFlagged, AdminSupport, AdminSettings,
 } from "./pages/admin/AdminPlaceholders.tsx";
+import BuyerLayout from "./components/buyer/BuyerLayout.tsx";
+import BuyerDashboard from "./pages/buyer/BuyerDashboard.tsx";
+import BuyerOrders from "./pages/buyer/BuyerOrders.tsx";
+import BuyerWishlist from "./pages/buyer/BuyerWishlist.tsx";
+import BuyerAddresses from "./pages/buyer/BuyerAddresses.tsx";
+import {
+  BuyerPayments, BuyerReviews, BuyerProfile, BuyerSettings,
+} from "./pages/buyer/BuyerPlaceholders.tsx";
 
 const queryClient = new QueryClient();
 
