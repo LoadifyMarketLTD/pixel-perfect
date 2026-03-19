@@ -19,6 +19,13 @@ import {
   SellerShipments, SellerReturns, SellerReviews,
   SellerRFQ, SellerProfile, SellerSettings,
 } from "./pages/seller/SellerPlaceholders.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
+import AdminApprovals from "./pages/admin/AdminApprovals.tsx";
+import {
+  AdminUsers, AdminProducts, AdminOrders, AdminReports,
+  AdminFlagged, AdminSupport, AdminSettings,
+} from "./pages/admin/AdminPlaceholders.tsx";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +55,19 @@ const App = () => (
             <Route path="rfq" element={<SellerRFQ />} />
             <Route path="profile" element={<SellerProfile />} />
             <Route path="settings" element={<SellerSettings />} />
+          </Route>
+
+          {/* Admin Dashboard */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="approvals" element={<AdminApprovals />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="reports" element={<AdminReports />} />
+            <Route path="flagged" element={<AdminFlagged />} />
+            <Route path="support" element={<AdminSupport />} />
+            <Route path="settings" element={<AdminSettings />} />
           </Route>
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
