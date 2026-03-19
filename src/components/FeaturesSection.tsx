@@ -43,7 +43,7 @@ const FeaturesSection = () => {
             Everything You Need to Trade
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A complete marketplace ecosystem built for pallet and clearance stock trading in the UK.
+            A complete marketplace ecosystem built for wholesale and clearance stock trading in the UK.
           </p>
         </div>
 

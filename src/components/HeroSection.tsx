@@ -16,14 +16,14 @@ const HeroSection = () => {
         <div className="max-w-2xl space-y-6">
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] text-primary-foreground animate-fade-in-up">
-            Buy & Sell Pallets,{" "}
+            Buy & Sell Wholesale,{" "}
             <span className="text-accent">
               Stock & Clearance
             </span>
           </h1>
 
           <p className="text-lg text-primary-foreground/80 max-w-lg animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            The trusted UK marketplace connecting buyers and sellers of wholesale pallets, 
+            The trusted UK marketplace connecting buyers and sellers of wholesale goods, 
             overstock, and clearance deals. Start trading faster today.
           </p>
 

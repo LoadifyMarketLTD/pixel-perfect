@@ -13,7 +13,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-background/60 leading-relaxed">
-              UK's trusted marketplace for pallets, wholesale stock and clearance deals.
+              UK's trusted marketplace for wholesale stock, bulk deals and clearance goods.
             </p>
             <p className="text-sm text-background/40">loadifymarket.co.uk</p>
           </div>
