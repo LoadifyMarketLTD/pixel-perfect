@@ -12,6 +12,10 @@ import Signup from "./pages/Signup.tsx";
 import Cart from "./pages/Cart.tsx";
 import Checkout from "./pages/Checkout.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AboutUs from "./pages/AboutUs.tsx";
+import ContactUs from "./pages/ContactUs.tsx";
+import TermsAndConditions from "./pages/TermsAndConditions.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import SellerLayout from "./components/seller/SellerLayout.tsx";
 import SellerDashboard from "./pages/seller/SellerDashboard.tsx";
 import SellerProducts from "./pages/seller/SellerProducts.tsx";
@@ -53,6 +57,10 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
 
           {/* Seller Dashboard */}
           <Route path="/seller" element={<SellerLayout />}>

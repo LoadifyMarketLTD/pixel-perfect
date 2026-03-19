@@ -168,11 +168,11 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>About Us</FooterExtLink>
-                <FooterExtLink>Contact Us</FooterExtLink>
+                <FooterLink to="/about">About Us</FooterLink>
+                <FooterLink to="/contact">Contact Us</FooterLink>
                 <FooterExtLink>Help Centre</FooterExtLink>
                 <FooterExtLink>Support</FooterExtLink>
-                <FooterExtLink>Business Enquiries</FooterExtLink>
+                <FooterLink to="/contact">Business Enquiries</FooterLink>
               </ul>
             </div>
 
@@ -182,8 +182,8 @@ const Footer = () => {
                 Legal
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>Terms &amp; Conditions</FooterExtLink>
-                <FooterExtLink>Privacy Policy</FooterExtLink>
+                <FooterLink to="/terms">Terms &amp; Conditions</FooterLink>
+                <FooterLink to="/privacy">Privacy Policy</FooterLink>
                 <FooterExtLink>Cookie Policy</FooterExtLink>
                 <FooterExtLink>Disclaimer</FooterExtLink>
                 <FooterExtLink>Returns Policy</FooterExtLink>
@@ -207,11 +207,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
-              <span className="cursor-default">Terms</span>
-              <span className="cursor-default">Privacy</span>
+              <Link to="/terms" className="hover:text-background transition-colors">Terms</Link>
+              <Link to="/privacy" className="hover:text-background transition-colors">Privacy</Link>
               <span className="cursor-default">Cookies</span>
               <span className="cursor-default">Disclaimer</span>
-              <span className="cursor-default">Contact</span>
+              <Link to="/contact" className="hover:text-background transition-colors">Contact</Link>
             </div>
           </div>
         </div>
