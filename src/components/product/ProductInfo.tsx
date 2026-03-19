@@ -13,7 +13,7 @@ interface ProductInfoProps {
   subcategory: string;
   condition: string;
   location: string;
-  palletCount: number;
+  unitCount: number;
   views: number;
   listed: string;
 }
@@ -34,7 +34,7 @@ const ProductInfo = ({
   subcategory,
   condition,
   location,
-  palletCount,
+  unitCount,
   views,
   listed,
 }: ProductInfoProps) => {
@@ -91,7 +91,7 @@ const ProductInfo = ({
       <div className="grid grid-cols-2 gap-3">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Package className="h-4 w-4 text-primary" />
-          {palletCount} {palletCount === 1 ? "pallet" : "pallets"}
+          {unitCount} {unitCount === 1 ? "lot" : "lots"}
         </div>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <MapPin className="h-4 w-4 text-primary" />

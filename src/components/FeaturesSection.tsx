@@ -4,7 +4,7 @@ const features = [
   {
     icon: Package,
     title: "Multi-Vendor Marketplace",
-    description: "Multiple verified sellers listing pallets, stock and clearance goods in one unified platform.",
+    description: "Multiple verified sellers listing wholesale stock and clearance goods in one unified platform.",
   },
   {
     icon: Zap,
@@ -43,7 +43,7 @@ const FeaturesSection = () => {
             Everything You Need to Trade
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A complete marketplace ecosystem built for pallet and clearance stock trading in the UK.
+            A complete marketplace ecosystem built for wholesale and clearance stock trading in the UK.
           </p>
         </div>
 

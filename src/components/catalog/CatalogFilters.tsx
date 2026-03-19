@@ -17,7 +17,7 @@ const categories = [
   "Office & Stationery",
   "Baby & Nursery",
   "Jewellery & Watches",
-  "Mixed Pallets",
+  "Mixed Lots",
   "Customer Returns",
   "Overstock",
   "Clearance Deals",

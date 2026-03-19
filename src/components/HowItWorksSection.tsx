@@ -11,7 +11,7 @@ const steps = [
     icon: PackagePlus,
     step: "02",
     title: "List or Browse",
-    description: "Sellers list their pallets and clearance stock. Buyers browse categories and find deals.",
+    description: "Sellers list their wholesale and clearance stock. Buyers browse categories and find deals.",
   },
   {
     icon: CreditCard,

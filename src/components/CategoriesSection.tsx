@@ -110,7 +110,7 @@ const categories = [
   },
   {
     icon: Package,
-    label: "Mixed Pallets",
+    label: "Mixed Lots",
     count: "120+ listings",
     image: mixedPalletsImg,
     subcategories: ["General Mixed", "Department Store Returns", "Amazon Returns", "Seasonal Mixed", "High Value Mixed", "Liquidation Lots"],
@@ -153,7 +153,7 @@ const CategoriesSection = () => {
             Browse by Category
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Find exactly what you're looking for across our wide range of pallet, stock and clearance categories.
+            Find exactly what you're looking for across our wide range of wholesale, stock and clearance categories.
           </p>
         </div>
 

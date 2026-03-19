@@ -32,7 +32,7 @@ const Login = () => {
             The UK's #1 B2B Wholesale Marketplace
           </h2>
           <p className="text-primary-foreground/70 text-lg leading-relaxed">
-            Access thousands of wholesale pallets from verified UK suppliers at unbeatable prices.
+            Access thousands of wholesale deals from verified UK suppliers at unbeatable prices.
           </p>
           <div className="grid grid-cols-3 gap-4 pt-4">
             {[

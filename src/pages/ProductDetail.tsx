@@ -74,8 +74,8 @@ const ProductDetail = () => {
                 <h2 className="font-display text-lg font-semibold text-foreground">Description</h2>
                 <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
                   <p>
-                    This {product.condition.toLowerCase()} condition lot includes {product.palletCount}{" "}
-                    {product.palletCount === 1 ? "pallet" : "pallets"} of {product.category.toLowerCase()} items.
+                    This {product.condition.toLowerCase()} condition lot includes {product.unitCount}{" "}
+                    {product.unitCount === 1 ? "lot" : "lots"} of {product.category.toLowerCase()} items.
                     Located in {product.location}, available for collection or delivery UK-wide.
                   </p>
                   <p>
@@ -94,7 +94,7 @@ const ProductDetail = () => {
                   <ul className="list-disc list-inside space-y-1">
                     <li>Collection available from {product.location}</li>
                     <li>UK mainland delivery available (quote on request)</li>
-                    <li>Pallets are stretch-wrapped and ready for transport</li>
+                    <li>Items are securely packaged and ready for transport</li>
                   </ul>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const ProductDetail = () => {
                     subcategory={product.subcategory}
                     condition={product.condition}
                     location={product.location}
-                    palletCount={product.palletCount}
+                    unitCount={product.unitCount}
                     views={product.views}
                     listed={product.listed}
                   />

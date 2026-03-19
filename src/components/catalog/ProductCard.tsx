@@ -15,7 +15,7 @@ export interface Product {
   location: string;
   seller: string;
   sellerVerified: boolean;
-  palletCount: number;
+  unitCount: number;
   rating: number;
   views: number;
   listed: string;
@@ -82,7 +82,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Package className="h-3 w-3" />
-            {product.palletCount} {product.palletCount === 1 ? "pallet" : "pallets"}
+            {product.unitCount} {product.unitCount === 1 ? "lot" : "lots"}
           </div>
           <div className="flex items-center gap-1">
             <MapPin className="h-3 w-3" />
