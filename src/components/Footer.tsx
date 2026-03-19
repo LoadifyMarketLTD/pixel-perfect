@@ -3,6 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logo from "@/assets/loadify-logo.png";
 
+const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
+  <li>
+    <Link to={to} className="hover:text-background transition-colors">
+      {children}
+    </Link>
+  </li>
+);
+
+const FooterExtLink = ({ children }: { children: React.ReactNode }) => (
+  <li>
+    <span className="cursor-default opacity-60">{children}</span>
+  </li>
+);
+
 const Footer = () => {
   return (
     <footer>
@@ -28,12 +42,12 @@ const Footer = () => {
       {/* Logo bar with trust badges */}
       <div className="bg-foreground border-b border-background/10">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Loadify Market" className="h-8 w-8" />
             <span className="font-display text-lg font-bold text-background">
               Loadify Market
             </span>
-          </div>
+          </Link>
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-background/70">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
@@ -49,7 +63,6 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            {/* Social icons */}
             {[
               { label: "Facebook", path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
               { label: "Instagram", path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
@@ -106,15 +119,15 @@ const Footer = () => {
                 For Buyers
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <li><a href="#" className="hover:text-background transition-colors">Browse Marketplace</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Wholesale &amp; Pallets</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Amazon Returns</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Electronics</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Fashion</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Home &amp; Garden</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Automotive</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Track Order</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Help &amp; FAQ</a></li>
+                <FooterLink to="/catalog">Browse Marketplace</FooterLink>
+                <FooterLink to="/catalog">Wholesale &amp; Pallets</FooterLink>
+                <FooterLink to="/catalog">Amazon Returns</FooterLink>
+                <FooterLink to="/catalog">Electronics</FooterLink>
+                <FooterLink to="/catalog">Fashion</FooterLink>
+                <FooterLink to="/catalog">Home &amp; Garden</FooterLink>
+                <FooterLink to="/catalog">Automotive</FooterLink>
+                <FooterLink to="/dashboard/orders">Track Order</FooterLink>
+                <FooterExtLink>Help &amp; FAQ</FooterExtLink>
               </ul>
             </div>
 
@@ -124,13 +137,13 @@ const Footer = () => {
                 For Sellers
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <li><a href="#" className="hover:text-background transition-colors">Start Selling</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Seller Dashboard</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">List a Product</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Seller Fees &amp; Pricing</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Seller Guidelines</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">How It Works</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Partner With Us</a></li>
+                <FooterLink to="/signup">Start Selling</FooterLink>
+                <FooterLink to="/seller">Seller Dashboard</FooterLink>
+                <FooterLink to="/seller/products">List a Product</FooterLink>
+                <FooterExtLink>Seller Fees &amp; Pricing</FooterExtLink>
+                <FooterExtLink>Seller Guidelines</FooterExtLink>
+                <FooterLink to="/#how-it-works">How It Works</FooterLink>
+                <FooterExtLink>Partner With Us</FooterExtLink>
               </ul>
             </div>
 
@@ -140,12 +153,12 @@ const Footer = () => {
                 Marketplace
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <li><a href="#" className="hover:text-background transition-colors">Buyer Protection</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Transport Quote</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Request Shipping Quote</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Verified Sellers</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Wholesale Orders</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Business Accounts</a></li>
+                <FooterExtLink>Buyer Protection</FooterExtLink>
+                <FooterExtLink>Transport Quote</FooterExtLink>
+                <FooterExtLink>Request Shipping Quote</FooterExtLink>
+                <FooterExtLink>Verified Sellers</FooterExtLink>
+                <FooterLink to="/catalog">Wholesale Orders</FooterLink>
+                <FooterExtLink>Business Accounts</FooterExtLink>
               </ul>
             </div>
 
@@ -155,11 +168,11 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <li><a href="#" className="hover:text-background transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Help Centre</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Support</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Business Enquiries</a></li>
+                <FooterExtLink>About Us</FooterExtLink>
+                <FooterExtLink>Contact Us</FooterExtLink>
+                <FooterExtLink>Help Centre</FooterExtLink>
+                <FooterExtLink>Support</FooterExtLink>
+                <FooterExtLink>Business Enquiries</FooterExtLink>
               </ul>
             </div>
 
@@ -169,14 +182,14 @@ const Footer = () => {
                 Legal
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <li><a href="#" className="hover:text-background transition-colors">Terms &amp; Conditions</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Cookie Policy</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Disclaimer</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Returns Policy</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Shipping Policy</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Buyer Terms</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Seller Terms</a></li>
+                <FooterExtLink>Terms &amp; Conditions</FooterExtLink>
+                <FooterExtLink>Privacy Policy</FooterExtLink>
+                <FooterExtLink>Cookie Policy</FooterExtLink>
+                <FooterExtLink>Disclaimer</FooterExtLink>
+                <FooterExtLink>Returns Policy</FooterExtLink>
+                <FooterExtLink>Shipping Policy</FooterExtLink>
+                <FooterExtLink>Buyer Terms</FooterExtLink>
+                <FooterExtLink>Seller Terms</FooterExtLink>
               </ul>
             </div>
           </div>
@@ -194,11 +207,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
-              <a href="#" className="hover:text-background transition-colors">Terms</a>
-              <a href="#" className="hover:text-background transition-colors">Privacy</a>
-              <a href="#" className="hover:text-background transition-colors">Cookies</a>
-              <a href="#" className="hover:text-background transition-colors">Disclaimer</a>
-              <a href="#" className="hover:text-background transition-colors">Contact</a>
+              <span className="cursor-default">Terms</span>
+              <span className="cursor-default">Privacy</span>
+              <span className="cursor-default">Cookies</span>
+              <span className="cursor-default">Disclaimer</span>
+              <span className="cursor-default">Contact</span>
             </div>
           </div>
         </div>
