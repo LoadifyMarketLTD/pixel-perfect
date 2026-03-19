@@ -1,7 +1,9 @@
 import { useState, useMemo } from "react";
 import { X } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CatalogFilters from "@/components/catalog/CatalogFilters";
 import CatalogHeader from "@/components/catalog/CatalogHeader";
 import ProductCard from "@/components/catalog/ProductCard";
@@ -85,7 +87,16 @@ const Catalog = () => {
 
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="py-6">
+          <BreadcrumbNav
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Catalog" },
+            ]}
+            showBack={true}
+            backLabel="Back"
+            backTo="/"
+          />
+          <div className="pb-4">
             <CatalogHeader
               totalResults={filteredProducts.length}
               sortBy={sortBy}
