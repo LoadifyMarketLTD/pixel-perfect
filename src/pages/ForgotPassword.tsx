@@ -30,16 +30,16 @@ const ForgotPassword = () => {
             </span>
           </div>
           <h2 className="font-display text-2xl font-bold text-primary-foreground">
-            Your B2B Wholesale Marketplace
+            The UK Wholesale Marketplace
           </h2>
           <p className="text-primary-foreground/70 text-lg leading-relaxed">
-            Access thousands of wholesale deals from verified UK suppliers at unbeatable prices.
+            A trusted platform connecting buyers and sellers of wholesale, clearance and overstock goods across the UK.
           </p>
           <div className="grid grid-cols-3 gap-4 pt-4">
             {[
-              { label: "Verified Sellers", value: "500+" },
-              { label: "Active Listings", value: "10K+" },
-              { label: "Avg Savings", value: "60%" },
+              { label: "Verified Sellers", value: "✓" },
+              { label: "Secure Payments", value: "✓" },
+              { label: "UK Businesses", value: "✓" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-display text-2xl font-bold text-accent">{stat.value}</div>
