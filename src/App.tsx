@@ -11,6 +11,14 @@ import Signup from "./pages/Signup.tsx";
 import Cart from "./pages/Cart.tsx";
 import Checkout from "./pages/Checkout.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import SellerLayout from "./components/seller/SellerLayout.tsx";
+import SellerDashboard from "./pages/seller/SellerDashboard.tsx";
+import SellerProducts from "./pages/seller/SellerProducts.tsx";
+import SellerOrders from "./pages/seller/SellerOrders.tsx";
+import {
+  SellerShipments, SellerReturns, SellerReviews,
+  SellerRFQ, SellerProfile, SellerSettings,
+} from "./pages/seller/SellerPlaceholders.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +36,20 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+
+          {/* Seller Dashboard */}
+          <Route path="/seller" element={<SellerLayout />}>
+            <Route index element={<SellerDashboard />} />
+            <Route path="products" element={<SellerProducts />} />
+            <Route path="orders" element={<SellerOrders />} />
+            <Route path="shipments" element={<SellerShipments />} />
+            <Route path="returns" element={<SellerReturns />} />
+            <Route path="reviews" element={<SellerReviews />} />
+            <Route path="rfq" element={<SellerRFQ />} />
+            <Route path="profile" element={<SellerProfile />} />
+            <Route path="settings" element={<SellerSettings />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
