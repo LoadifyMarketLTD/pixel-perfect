@@ -1,30 +1,71 @@
-import { UserPlus, PackagePlus, PoundSterling, ArrowRight } from "lucide-react";
+import { UserPlus, Search, PackagePlus, PoundSterling, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const steps = [
+const buyerSteps = [
+  {
+    icon: UserPlus,
+    step: "01",
+    title: "Create a Free Account",
+    description: "Sign up in under 2 minutes. Browse the marketplace as a verified buyer.",
+  },
+  {
+    icon: Search,
+    step: "02",
+    title: "Find the Stock You Need",
+    description: "Search wholesale, clearance and pallet deals from verified UK sellers across all categories.",
+  },
+  {
+    icon: PoundSterling,
+    step: "03",
+    title: "Buy & Get It Delivered",
+    description: "Purchase securely via Stripe. Arrange delivery with the seller or use our logistics support.",
+  },
+];
+
+const sellerSteps = [
   {
     icon: UserPlus,
     step: "01",
     title: "Sign Up & Get Verified",
-    description:
-      "Create your free seller account in under 2 minutes. We verify every seller to keep the marketplace trusted and professional.",
+    description: "Create your free seller account. We verify every seller to keep the marketplace trusted.",
   },
   {
     icon: PackagePlus,
     step: "02",
     title: "List Your Stock",
-    description:
-      "Upload your wholesale, clearance or overstock lines with photos and pricing. Buyers see your listings instantly.",
+    description: "Upload your wholesale, clearance or overstock lines with photos and pricing. Buyers see them instantly.",
   },
   {
     icon: PoundSterling,
     step: "03",
     title: "Sell & Get Paid",
-    description:
-      "Verified UK buyers purchase your stock. Payments are processed securely via Stripe with fast payouts to your account.",
+    description: "Buyers purchase your stock. Payments are processed securely via Stripe with fast payouts.",
   },
 ];
+
+const StepRow = ({ title, steps }: { title: string; steps: typeof buyerSteps }) => (
+  <div>
+    <h3 className="text-center font-display text-lg font-semibold text-primary mb-8">{title}</h3>
+    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      {steps.map((item, i) => (
+        <div key={item.step} className="relative text-center group">
+          {i < steps.length - 1 && (
+            <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px border-t-2 border-dashed border-border" />
+          )}
+          <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-hero text-primary-foreground mb-5 shadow-elevated group-hover:scale-105 transition-transform">
+            <item.icon className="h-8 w-8" />
+            <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">
+              {item.step}
+            </span>
+          </div>
+          <h4 className="font-display text-lg font-semibold text-foreground mb-2">{item.title}</h4>
+          <p className="text-sm text-muted-foreground max-w-[260px] mx-auto leading-relaxed">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 const HowItWorksSection = () => {
   return (
@@ -35,44 +76,34 @@ const HowItWorksSection = () => {
             How It Works
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-display font-bold text-foreground">
-            From Sign-Up to First Sale in 3 Steps
+            Simple for Buyers. Simple for Sellers.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            No listing fees. No complicated setup. Just list your stock and start selling.
+            Whether you're buying or selling, get started in 3 easy steps.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {steps.map((item, i) => (
-            <div key={item.step} className="relative text-center group">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px border-t-2 border-dashed border-border" />
-              )}
-              <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-hero text-primary-foreground mb-5 shadow-elevated group-hover:scale-105 transition-transform">
-                <item.icon className="h-8 w-8" />
-                <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">
-                  {item.step}
-                </span>
-              </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-muted-foreground max-w-[260px] mx-auto leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
+        <div className="space-y-16">
+          <StepRow title="For Buyers" steps={buyerSteps} />
+          <StepRow title="For Sellers" steps={sellerSteps} />
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-14">
+        <div className="flex flex-wrap justify-center gap-4 mt-14">
+          <Link to="/catalog">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base px-8 shadow-lg shadow-primary/20"
+            >
+              Browse Marketplace <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
           <Link to="/signup">
             <Button
               size="lg"
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-8 shadow-lg shadow-emerald-600/20"
             >
-              Create Free Seller Account <ArrowRight className="ml-2 h-5 w-5" />
+              Create Seller Account <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>
