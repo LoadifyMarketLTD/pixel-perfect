@@ -145,10 +145,10 @@ const Deals = () => {
               <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-3">
                 Pallets, Clearance &amp; Bulk Deals
               </h1>
-              <p className="text-muted-foreground text-base leading-relaxed mb-2">
+              <p className="text-foreground text-base font-medium leading-relaxed mb-2">
                 Browse thousands of listings from UK sellers or sell your excess stock fast.
               </p>
-              <p className="text-xs text-muted-foreground/70 mb-5">
+              <p className="text-sm text-foreground/80 mb-5">
                 This is a marketplace section where sellers list stock and buyers connect directly.
               </p>
               <div className="flex flex-wrap gap-3">
