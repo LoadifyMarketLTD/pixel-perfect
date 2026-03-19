@@ -11,11 +11,6 @@ const FooterLink = ({ to, children }: { to: string; children: React.ReactNode })
   </li>
 );
 
-const FooterExtLink = ({ children }: { children: React.ReactNode }) => (
-  <li>
-    <span className="cursor-default opacity-60">{children}</span>
-  </li>
-);
 
 const Footer = () => {
   return (
@@ -127,7 +122,7 @@ const Footer = () => {
                 <FooterLink to="/catalog">Home &amp; Garden</FooterLink>
                 <FooterLink to="/catalog">Automotive</FooterLink>
                 <FooterLink to="/dashboard/orders">Track Order</FooterLink>
-                <FooterExtLink>Help &amp; FAQ</FooterExtLink>
+                <FooterLink to="/contact">Help &amp; FAQ</FooterLink>
               </ul>
             </div>
 
@@ -140,10 +135,10 @@ const Footer = () => {
                 <FooterLink to="/signup">Start Selling</FooterLink>
                 <FooterLink to="/seller">Seller Dashboard</FooterLink>
                 <FooterLink to="/seller/products">List a Product</FooterLink>
-                <FooterExtLink>Seller Fees &amp; Pricing</FooterExtLink>
-                <FooterExtLink>Seller Guidelines</FooterExtLink>
+                <FooterLink to="/seller-terms">Seller Fees &amp; Pricing</FooterLink>
+                <FooterLink to="/seller-terms">Seller Guidelines</FooterLink>
                 <FooterLink to="/#how-it-works">How It Works</FooterLink>
-                <FooterExtLink>Partner With Us</FooterExtLink>
+                <FooterLink to="/contact">Partner With Us</FooterLink>
               </ul>
             </div>
 
@@ -153,12 +148,12 @@ const Footer = () => {
                 Marketplace
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>Buyer Protection</FooterExtLink>
-                <FooterExtLink>Transport Quote</FooterExtLink>
-                <FooterExtLink>Request Shipping Quote</FooterExtLink>
-                <FooterExtLink>Verified Sellers</FooterExtLink>
+                <FooterLink to="/buyer-terms">Buyer Protection</FooterLink>
+                <FooterLink to="/shipping">Transport Quote</FooterLink>
+                <FooterLink to="/shipping">Request Shipping Quote</FooterLink>
+                <FooterLink to="/catalog">Verified Sellers</FooterLink>
                 <FooterLink to="/catalog">Wholesale Orders</FooterLink>
-                <FooterExtLink>Business Accounts</FooterExtLink>
+                <FooterLink to="/contact">Business Accounts</FooterLink>
               </ul>
             </div>
 
@@ -170,8 +165,8 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/about">About Us</FooterLink>
                 <FooterLink to="/contact">Contact Us</FooterLink>
-                <FooterExtLink>Help Centre</FooterExtLink>
-                <FooterExtLink>Support</FooterExtLink>
+                <FooterLink to="/contact">Help Centre</FooterLink>
+                <FooterLink to="/contact">Support</FooterLink>
                 <FooterLink to="/contact">Business Enquiries</FooterLink>
               </ul>
             </div>
@@ -184,12 +179,12 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/terms">Terms &amp; Conditions</FooterLink>
                 <FooterLink to="/privacy">Privacy Policy</FooterLink>
-                <FooterExtLink>Cookie Policy</FooterExtLink>
-                <FooterExtLink>Disclaimer</FooterExtLink>
-                <FooterExtLink>Returns Policy</FooterExtLink>
-                <FooterExtLink>Shipping Policy</FooterExtLink>
-                <FooterExtLink>Buyer Terms</FooterExtLink>
-                <FooterExtLink>Seller Terms</FooterExtLink>
+                <FooterLink to="/cookies">Cookie Policy</FooterLink>
+                <FooterLink to="/disclaimer">Disclaimer</FooterLink>
+                <FooterLink to="/returns">Returns Policy</FooterLink>
+                <FooterLink to="/shipping">Shipping Policy</FooterLink>
+                <FooterLink to="/buyer-terms">Buyer Terms</FooterLink>
+                <FooterLink to="/seller-terms">Seller Terms</FooterLink>
               </ul>
             </div>
           </div>
@@ -209,8 +204,8 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
               <Link to="/terms" className="hover:text-background transition-colors">Terms</Link>
               <Link to="/privacy" className="hover:text-background transition-colors">Privacy</Link>
-              <span className="cursor-default">Cookies</span>
-              <span className="cursor-default">Disclaimer</span>
+              <Link to="/cookies" className="hover:text-background transition-colors">Cookies</Link>
+              <Link to="/disclaimer" className="hover:text-background transition-colors">Disclaimer</Link>
               <Link to="/contact" className="hover:text-background transition-colors">Contact</Link>
             </div>
           </div>

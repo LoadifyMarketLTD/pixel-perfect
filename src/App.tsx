@@ -16,6 +16,12 @@ import AboutUs from "./pages/AboutUs.tsx";
 import ContactUs from "./pages/ContactUs.tsx";
 import TermsAndConditions from "./pages/TermsAndConditions.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import CookiePolicy from "./pages/CookiePolicy.tsx";
+import Disclaimer from "./pages/Disclaimer.tsx";
+import ReturnsPolicy from "./pages/ReturnsPolicy.tsx";
+import ShippingPolicy from "./pages/ShippingPolicy.tsx";
+import BuyerTerms from "./pages/BuyerTerms.tsx";
+import SellerTerms from "./pages/SellerTerms.tsx";
 import SellerLayout from "./components/seller/SellerLayout.tsx";
 import SellerDashboard from "./pages/seller/SellerDashboard.tsx";
 import SellerProducts from "./pages/seller/SellerProducts.tsx";
@@ -61,6 +67,12 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/returns" element={<ReturnsPolicy />} />
+          <Route path="/shipping" element={<ShippingPolicy />} />
+          <Route path="/buyer-terms" element={<BuyerTerms />} />
+          <Route path="/seller-terms" element={<SellerTerms />} />
 
           {/* Seller Dashboard */}
           <Route path="/seller" element={<SellerLayout />}>
