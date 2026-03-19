@@ -26,7 +26,7 @@ const CTASection = () => {
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-200 ease-in-out text-base">
                   Create Free Account
                 </Button>
               </Link>
