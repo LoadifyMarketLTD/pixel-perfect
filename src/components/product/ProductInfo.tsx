@@ -13,7 +13,7 @@ interface ProductInfoProps {
   subcategory: string;
   condition: string;
   location: string;
-  palletCount: number;
+  unitCount: number;
   views: number;
   listed: string;
 }
