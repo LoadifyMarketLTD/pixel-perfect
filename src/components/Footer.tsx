@@ -122,7 +122,7 @@ const Footer = () => {
                 <FooterLink to="/catalog">Home &amp; Garden</FooterLink>
                 <FooterLink to="/catalog">Automotive</FooterLink>
                 <FooterLink to="/dashboard/orders">Track Order</FooterLink>
-                <FooterExtLink>Help &amp; FAQ</FooterExtLink>
+                <FooterLink to="/contact">Help &amp; FAQ</FooterLink>
               </ul>
             </div>
 
