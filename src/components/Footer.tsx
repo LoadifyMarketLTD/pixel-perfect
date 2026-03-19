@@ -135,10 +135,10 @@ const Footer = () => {
                 <FooterLink to="/signup">Start Selling</FooterLink>
                 <FooterLink to="/seller">Seller Dashboard</FooterLink>
                 <FooterLink to="/seller/products">List a Product</FooterLink>
-                <FooterExtLink>Seller Fees &amp; Pricing</FooterExtLink>
-                <FooterExtLink>Seller Guidelines</FooterExtLink>
+                <FooterLink to="/seller-terms">Seller Fees &amp; Pricing</FooterLink>
+                <FooterLink to="/seller-terms">Seller Guidelines</FooterLink>
                 <FooterLink to="/#how-it-works">How It Works</FooterLink>
-                <FooterExtLink>Partner With Us</FooterExtLink>
+                <FooterLink to="/contact">Partner With Us</FooterLink>
               </ul>
             </div>
 
