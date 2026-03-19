@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Package, Shirt, Laptop, Home, Wrench, ShoppingBag,
   Heart, Gamepad2, UtensilsCrossed, Car, Briefcase,
@@ -139,6 +140,7 @@ const categories = [
 ];
 
 const CategoriesSection = () => {
+  const navigate = useNavigate();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -199,7 +201,10 @@ const CategoriesSection = () => {
                     <ul className="space-y-1.5">
                       {cat.subcategories.map((sub) => (
                         <li key={sub}>
-                          <button className="w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors py-1 px-3 rounded-md hover:bg-primary/5">
+                          <button
+                            onClick={() => navigate(`/catalog?category=${encodeURIComponent(cat.label)}`)}
+                            className="w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors py-1 px-3 rounded-md hover:bg-primary/5"
+                          >
                             {sub}
                           </button>
                         </li>
