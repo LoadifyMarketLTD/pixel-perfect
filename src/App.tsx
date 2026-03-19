@@ -13,6 +13,7 @@ import Signup from "./pages/Signup.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Cart from "./pages/Cart.tsx";
 import Checkout from "./pages/Checkout.tsx";
+import Deals from "./pages/Deals.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AboutUs from "./pages/AboutUs.tsx";
 import ContactUs from "./pages/ContactUs.tsx";
