@@ -16,7 +16,7 @@ const SellerPlaceholder = ({ title }: { title: string }) => {
 
 export const SellerShipments = () => <SellerPlaceholder title="Shipments" />;
 export const SellerReturns = () => <SellerPlaceholder title="Returns" />;
-export const SellerReviews = () => <SellerPlaceholder title="Reviews" />;
+export { default as SellerReviews } from "./SellerReviewsPage";
 export const SellerRFQ = () => <SellerPlaceholder title="RFQ / Quotes" />;
 export const SellerProfile = () => <SellerPlaceholder title="Seller Profile" />;
 export const SellerSettings = () => <SellerPlaceholder title="Settings" />;

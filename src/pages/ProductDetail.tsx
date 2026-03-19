@@ -100,6 +100,12 @@ const ProductDetail = () => {
                   </ul>
                 </div>
               </div>
+
+              {/* Reviews */}
+              <ProductReviews
+                productRating={product.rating}
+                reviewCount={product.reviewCount}
+              />
             </div>
 
             {/* Right: Info + Seller */}
