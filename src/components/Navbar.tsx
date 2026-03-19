@@ -23,8 +23,8 @@ const Navbar = () => {
         <NavbarSearch className="hidden md:block w-72 lg:w-96" />
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
-          <a href="#how-it-works" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
+          <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Catalog</Link>
+          <Link to="/deals" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Deals</Link>
           <a href="#categories" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Categories</a>
           <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
         </div>
@@ -61,8 +61,8 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
-          <a href="#features" className="block text-sm font-medium text-muted-foreground">Features</a>
-          <a href="#how-it-works" className="block text-sm font-medium text-muted-foreground">How It Works</a>
+          <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Catalog</Link>
+          <Link to="/deals" className="block text-sm font-medium text-muted-foreground">Deals</Link>
           <a href="#categories" className="block text-sm font-medium text-muted-foreground">Categories</a>
           <a href="#contact" className="block text-sm font-medium text-muted-foreground">Contact</a>
           <div className="flex gap-2 pt-2">
