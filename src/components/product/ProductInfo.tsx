@@ -34,7 +34,7 @@ const ProductInfo = ({
   subcategory,
   condition,
   location,
-  palletCount,
+  unitCount,
   views,
   listed,
 }: ProductInfoProps) => {
