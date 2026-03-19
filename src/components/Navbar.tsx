@@ -73,8 +73,8 @@ const Navbar = () => {
         <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Catalog</Link>
           <Link to="/clearance" className="block text-sm font-medium text-muted-foreground">Deals</Link>
-          <a href="#categories" className="block text-sm font-medium text-muted-foreground">Categories</a>
-          <a href="#contact" className="block text-sm font-medium text-muted-foreground">Contact</a>
+          <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Categories</Link>
+          <Link to="/contact" className="block text-sm font-medium text-muted-foreground">Contact</Link>
           <div className="flex gap-2 pt-2">
             <Button variant="ghost" size="sm" className="flex-1" asChild><Link to="/login">Sign In</Link></Button>
             <Button size="sm" className="flex-1 bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>

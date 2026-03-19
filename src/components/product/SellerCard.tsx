@@ -48,9 +48,11 @@ const SellerCard = ({ name, verified, rating, location, totalListings }: SellerC
         {totalListings} active listings
       </div>
 
-      <Button variant="outline" size="sm" className="w-full text-sm">
-        View Seller Profile <ExternalLink className="ml-2 h-3.5 w-3.5" />
-      </Button>
+      <Link to={`/catalog?seller=${encodeURIComponent(name)}`}>
+        <Button variant="outline" size="sm" className="w-full text-sm">
+          View Seller Profile <ExternalLink className="ml-2 h-3.5 w-3.5" />
+        </Button>
+      </Link>
     </div>
   );
 };
