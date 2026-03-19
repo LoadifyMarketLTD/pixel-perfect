@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { mockProducts } from "@/data/mockProducts";
 
 // Simulated cart summary
