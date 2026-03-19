@@ -4,7 +4,7 @@ const features = [
   {
     icon: Package,
     title: "Multi-Vendor Marketplace",
-    description: "Multiple verified sellers listing pallets, stock and clearance goods in one unified platform.",
+    description: "Multiple verified sellers listing wholesale stock and clearance goods in one unified platform.",
   },
   {
     icon: Zap,
