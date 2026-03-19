@@ -3,6 +3,7 @@ import { X, Package, Tag, RotateCcw, Layers, TrendingDown, ArrowRight } from "lu
 import Navbar from "@/components/Navbar";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import Footer from "@/components/Footer";
+import CountdownBanner from "@/components/CountdownBanner";
 import CatalogFilters from "@/components/catalog/CatalogFilters";
 import CatalogHeader from "@/components/catalog/CatalogHeader";
 import ProductCard from "@/components/catalog/ProductCard";
@@ -167,6 +168,7 @@ const Deals = () => {
                   </Button>
                 </Link>
               </div>
+              <CountdownBanner variant="inline" />
             </div>
           </div>
         </div>
