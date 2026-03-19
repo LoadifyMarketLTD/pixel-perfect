@@ -1,9 +1,10 @@
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/loadify-logo.png";
 import NavbarSearch from "@/components/NavbarSearch";
+import { useCart } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
