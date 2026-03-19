@@ -110,8 +110,8 @@
 | Status | Count |
 |---|---|
 | ✅ Ready (no changes needed) | **33** |
-| ⚠️ UI Complete, Needs Wiring | **18** |
-| 🔴 Placeholder | **16** |
+| ⚠️ UI Complete, Needs Wiring | **23** |
+| 🔴 Placeholder | **11** |
 | **Total** | **67** |
 
 ---
