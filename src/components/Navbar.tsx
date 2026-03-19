@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link to="/cart" className="relative p-2 text-muted-foreground hover:text-foreground transition-colors">
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
