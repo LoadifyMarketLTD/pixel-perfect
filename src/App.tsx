@@ -78,6 +78,18 @@ const App = () => (
             <Route path="settings" element={<AdminSettings />} />
           </Route>
 
+          {/* Buyer Dashboard */}
+          <Route path="/dashboard" element={<BuyerLayout />}>
+            <Route index element={<BuyerDashboard />} />
+            <Route path="orders" element={<BuyerOrders />} />
+            <Route path="wishlist" element={<BuyerWishlist />} />
+            <Route path="addresses" element={<BuyerAddresses />} />
+            <Route path="payments" element={<BuyerPayments />} />
+            <Route path="reviews" element={<BuyerReviews />} />
+            <Route path="profile" element={<BuyerProfile />} />
+            <Route path="settings" element={<BuyerSettings />} />
+          </Route>
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
