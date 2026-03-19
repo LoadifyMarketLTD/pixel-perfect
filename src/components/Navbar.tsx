@@ -63,7 +63,7 @@ const Navbar = () => {
 
       {/* Mobile search */}
       {mobileSearchOpen && (
-        <div className="md:hidden bg-card border-b border-border px-4 py-3">
+        <div className="lg:hidden bg-card border-b border-border px-4 py-3">
           <NavbarSearch className="w-full" onSelect={() => setMobileSearchOpen(false)} />
         </div>
       )}
