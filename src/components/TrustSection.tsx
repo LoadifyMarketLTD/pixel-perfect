@@ -32,7 +32,7 @@ const TrustSection = () => {
                   className="h-3 w-3 fill-amber-400 text-amber-400"
                 />
               ))}
-              <span className="text-xs font-semibold text-foreground ml-1">4.8</span>
+              <span className="text-xs font-semibold text-foreground ml-1">5.0</span>
             </div>
           </div>
         </div>
