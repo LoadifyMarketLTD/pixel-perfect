@@ -1,11 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const TermsAndConditions = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-24 pb-20">
+      <main className="pt-20 pb-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <BreadcrumbNav items={[{ label: "Home", to: "/" }, { label: "Legal", to: "/terms" }, { label: "Terms & Conditions" }]} backTo="/" />
+        </div>
         <div className="container mx-auto px-4 max-w-4xl prose prose-slate dark:prose-invert prose-headings:font-display">
           <h1>Terms &amp; Conditions</h1>
           <p className="text-muted-foreground"><strong>Last updated:</strong> 19 March 2026</p>
