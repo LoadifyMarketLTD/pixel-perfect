@@ -87,7 +87,16 @@ const Catalog = () => {
 
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="py-6">
+          <BreadcrumbNav
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Catalog" },
+            ]}
+            showBack={true}
+            backLabel="Back"
+            backTo="/"
+          />
+          <div className="pb-4">
             <CatalogHeader
               totalResults={filteredProducts.length}
               sortBy={sortBy}
