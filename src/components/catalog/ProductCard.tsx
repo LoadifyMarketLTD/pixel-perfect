@@ -1,6 +1,7 @@
 import { MapPin, Package, Star, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export interface Product {
   id: string;
@@ -106,9 +107,11 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         </div>
 
-        <Button className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-opacity text-sm" size="sm">
-          View Details
-        </Button>
+        <Link to={`/product/${product.id}`}>
+          <Button className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-opacity text-sm" size="sm">
+            View Details
+          </Button>
+        </Link>
       </div>
     </div>
   );
