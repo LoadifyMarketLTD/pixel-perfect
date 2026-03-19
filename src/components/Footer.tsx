@@ -207,11 +207,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
-              <span className="cursor-default">Terms</span>
-              <span className="cursor-default">Privacy</span>
+              <Link to="/terms" className="hover:text-background transition-colors">Terms</Link>
+              <Link to="/privacy" className="hover:text-background transition-colors">Privacy</Link>
               <span className="cursor-default">Cookies</span>
               <span className="cursor-default">Disclaimer</span>
-              <span className="cursor-default">Contact</span>
+              <Link to="/contact" className="hover:text-background transition-colors">Contact</Link>
             </div>
           </div>
         </div>
