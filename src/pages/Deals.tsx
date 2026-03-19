@@ -129,12 +129,12 @@ const Deals = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
           </div>
           <div className="relative container mx-auto px-4 py-12">
-            <div className="flex items-center gap-2 text-sm mb-3">
-              <Link to="/" className="text-foreground/70 hover:text-foreground transition-colors drop-shadow-sm">Home</Link>
-              <span className="text-foreground/50 drop-shadow-sm">/</span>
-              <Link to="/catalog" className="text-foreground/70 hover:text-foreground transition-colors drop-shadow-sm">Catalog</Link>
-              <span className="text-foreground/50 drop-shadow-sm">/</span>
-              <span className="text-foreground font-semibold drop-shadow-sm">Clearance</span>
+            <div className="inline-flex items-center gap-2 text-sm mb-3 bg-foreground/60 backdrop-blur-sm px-3 py-1 rounded-full">
+              <Link to="/" className="text-background/90 hover:text-background transition-colors font-medium">Home</Link>
+              <span className="text-background/50">/</span>
+              <Link to="/catalog" className="text-background/90 hover:text-background transition-colors font-medium">Catalog</Link>
+              <span className="text-background/50">/</span>
+              <span className="text-background font-semibold">Clearance</span>
             </div>
 
             <div className="max-w-3xl">
