@@ -15,7 +15,7 @@ export interface Product {
   location: string;
   seller: string;
   sellerVerified: boolean;
-  palletCount: number;
+  unitCount: number;
   rating: number;
   views: number;
   listed: string;
