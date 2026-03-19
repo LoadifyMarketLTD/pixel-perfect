@@ -1,11 +1,13 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/loadify-logo.png";
+import NavbarSearch from "@/components/NavbarSearch";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
@@ -16,6 +18,9 @@ const Navbar = () => {
             Loadify <span className="text-primary">Market</span>
           </span>
         </div>
+
+        {/* Desktop search */}
+        <NavbarSearch className="hidden md:block w-72 lg:w-96" />
 
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
@@ -29,11 +34,31 @@ const Navbar = () => {
           <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile buttons */}
+        <div className="flex md:hidden items-center gap-1">
+          <button
+            className="text-foreground p-2"
+            onClick={() => { setMobileSearchOpen(!mobileSearchOpen); setMobileOpen(false); }}
+          >
+            <Search size={20} />
+          </button>
+          <button
+            className="text-foreground p-2"
+            onClick={() => { setMobileOpen(!mobileOpen); setMobileSearchOpen(false); }}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
+      {/* Mobile search */}
+      {mobileSearchOpen && (
+        <div className="md:hidden bg-card border-b border-border px-4 py-3">
+          <NavbarSearch className="w-full" onSelect={() => setMobileSearchOpen(false)} />
+        </div>
+      )}
+
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
           <a href="#features" className="block text-sm font-medium text-muted-foreground">Features</a>
