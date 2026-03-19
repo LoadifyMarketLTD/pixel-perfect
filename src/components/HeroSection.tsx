@@ -20,7 +20,7 @@ const HeroSection = () => {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] text-primary-foreground animate-fade-in-up">
             Buy & Sell Pallets,{" "}
-            <span className="bg-gradient-accent bg-clip-text text-transparent">
+            <span className="text-accent">
               Stock & Clearance
             </span>
           </h1>
