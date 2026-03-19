@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import CountdownBanner from "@/components/CountdownBanner";
 import TrustSection from "@/components/TrustSection";
 import WhySellSection from "@/components/WhySellSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -14,6 +15,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <CountdownBanner variant="homepage" />
       <TrustSection />
       <WhySellSection />
       <FeaturesSection />

@@ -166,7 +166,7 @@ const Deals = () => {
                     Start Selling <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
                 </Link>
-              </div>
+              <CountdownBanner variant="inline" />
             </div>
           </div>
         </div>
