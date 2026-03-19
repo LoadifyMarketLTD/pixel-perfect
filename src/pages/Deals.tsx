@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { mockProducts } from "@/data/mockProducts";
+import heroWarehouse from "@/assets/hero-warehouse.jpg";
 
 const dealCategories = [
   "Mixed Lots",
@@ -122,14 +123,18 @@ const Deals = () => {
 
       <main className="pt-20 pb-16">
         {/* Hero section */}
-        <div className="bg-gradient-to-b from-primary/5 to-background border-b border-border">
-          <div className="container mx-auto px-4 py-12">
+        <div className="relative border-b border-border overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={heroWarehouse} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+          </div>
+          <div className="relative container mx-auto px-4 py-12">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
               <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
               <span>/</span>
               <Link to="/catalog" className="hover:text-foreground transition-colors">Catalog</Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Deals</span>
+              <span className="text-foreground font-medium">Clearance</span>
             </div>
 
             <div className="max-w-3xl">
@@ -146,7 +151,7 @@ const Deals = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link to="/catalog">
-                  <Button variant="outline" size="sm" className="text-xs">
+                  <Button variant="outline" size="sm" className="text-xs bg-background/80 backdrop-blur-sm">
                     ← Back to Full Marketplace
                   </Button>
                 </Link>
