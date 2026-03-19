@@ -165,18 +165,19 @@ const CategoriesSection = () => {
                 key={cat.label}
                 className="group rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-elevated transition-all duration-300 overflow-hidden"
               >
-                {/* Category Image */}
-                <div className="relative h-40 overflow-hidden">
-                  <img
-                    src={cat.image}
-                    alt={cat.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4 right-4">
-                    <span className="font-display text-sm font-bold text-white drop-shadow-md">{cat.label}</span>
-                    <span className="block text-xs text-white/80 drop-shadow-sm">{cat.count}</span>
+                {/* Category header with image */}
+                <div className="flex items-center gap-3 p-3">
+                  <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0">
+                    <img
+                      src={cat.image}
+                      alt={cat.label}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="font-display text-sm font-semibold text-foreground block truncate">{cat.label}</span>
+                    <span className="text-xs text-muted-foreground">{cat.count}</span>
                   </div>
                 </div>
 
