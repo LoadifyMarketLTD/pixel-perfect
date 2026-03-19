@@ -3,10 +3,8 @@ import { ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-// Target date: 30 days from now (replace with a fixed date for production)
-const TARGET_DATE = new Date();
-TARGET_DATE.setDate(TARGET_DATE.getDate() + 30);
-const TARGET_TIME = TARGET_DATE.getTime();
+// FIXED: Use a fixed target date (19 April 2026) instead of relative date
+const TARGET_TIME = new Date("2026-04-19T00:00:00Z").getTime();
 
 interface TimeLeft {
   days: number;
@@ -42,12 +40,16 @@ const CountdownBanner = ({ variant = "homepage" }: CountdownBannerProps) => {
     return () => clearInterval(id);
   }, []);
 
+  const expired = time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0;
+
   const digits = [
     { value: time.days, label: "Days" },
     { value: time.hours, label: "Hours" },
     { value: time.minutes, label: "Mins" },
     { value: time.seconds, label: "Secs" },
   ];
+
+  if (expired) return null;
 
   if (variant === "inline") {
     return (
