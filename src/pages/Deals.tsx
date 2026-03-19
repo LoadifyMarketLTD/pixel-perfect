@@ -131,7 +131,7 @@ const Deals = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
           </div>
           <div className="relative container mx-auto px-4 py-12">
-            <div className="inline-flex [&_nav]:text-background/90 [&_a]:text-background/90 [&_a:hover]:text-background [&_span]:text-background [&_svg]:text-background/50">
+            <div className="inline-flex [&_nav]:text-foreground [&_a]:text-foreground/80 [&_a]:font-semibold [&_a:hover]:text-foreground [&_span]:text-foreground [&_span]:font-bold [&_svg]:text-foreground/60">
               <BreadcrumbNav
                 items={[
                   { label: "Home", to: "/" },
