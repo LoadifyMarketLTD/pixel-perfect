@@ -129,36 +129,36 @@ const Deals = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
           </div>
           <div className="relative container mx-auto px-4 py-12">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-              <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/catalog" className="hover:text-foreground transition-colors">Catalog</Link>
-              <span>/</span>
-              <span className="text-foreground font-medium">Clearance</span>
+            <div className="flex items-center gap-2 text-sm mb-3">
+              <Link to="/" className="text-foreground/70 hover:text-foreground transition-colors drop-shadow-sm">Home</Link>
+              <span className="text-foreground/50 drop-shadow-sm">/</span>
+              <Link to="/catalog" className="text-foreground/70 hover:text-foreground transition-colors drop-shadow-sm">Catalog</Link>
+              <span className="text-foreground/50 drop-shadow-sm">/</span>
+              <span className="text-foreground font-semibold drop-shadow-sm">Clearance</span>
             </div>
 
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 mb-3">
-                <Tag className="h-5 w-5 text-primary" />
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary">Marketplace Section</span>
+              <div className="inline-flex items-center gap-2 mb-3 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full">
+                <Tag className="h-3.5 w-3.5" />
+                <span className="text-xs font-semibold uppercase tracking-wider">Marketplace Section</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-3">
+              <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground drop-shadow-md mb-3">
                 Pallets, Clearance &amp; Bulk Deals
               </h1>
-              <p className="text-foreground text-base font-medium leading-relaxed mb-2">
+              <p className="text-foreground text-base font-semibold leading-relaxed drop-shadow-sm mb-2">
                 Browse thousands of listings from UK sellers or sell your excess stock fast.
               </p>
-              <p className="text-sm text-foreground/80 mb-5">
+              <p className="text-sm text-foreground font-medium drop-shadow-sm mb-5">
                 This is a marketplace section where sellers list stock and buyers connect directly.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#listings">
-                  <Button variant="outline" size="sm" className="text-xs bg-background/80 backdrop-blur-sm">
+                  <Button variant="outline" size="sm" className="text-xs font-semibold bg-background text-foreground border-border shadow-md hover:bg-background/90">
                     Browse Deals
                   </Button>
                 </a>
                 <Link to="/signup">
-                  <Button variant="default" size="sm" className="text-xs bg-gradient-hero text-primary-foreground">
+                  <Button variant="default" size="sm" className="text-xs bg-gradient-hero text-primary-foreground shadow-md">
                     Start Selling <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
                 </Link>
