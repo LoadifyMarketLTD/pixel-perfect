@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { X } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -11,6 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { mockProducts } from "@/data/mockProducts";
 
 const Catalog = () => {
+  const [searchParams] = useSearchParams();
+  const queryParam = searchParams.get("q") || "";
+  const categoryParam = searchParams.get("category") || "";
+
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedConditions, setSelectedConditions] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
@@ -18,6 +22,15 @@ const Catalog = () => {
   const [sortBy, setSortBy] = useState("newest");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [filtersVisible, setFiltersVisible] = useState(false);
+
+  // Sync category param from search into filter state on mount / param change
+  useEffect(() => {
+    if (categoryParam) {
+      setSelectedCategories((prev) =>
+        prev.includes(categoryParam) ? prev : [categoryParam]
+      );
+    }
+  }, [categoryParam]);
 
   const clearAll = () => {
     setSelectedCategories([]);
@@ -28,6 +41,18 @@ const Catalog = () => {
 
   const filteredProducts = useMemo(() => {
     let products = [...mockProducts];
+
+    // Text search from ?q= param
+    if (queryParam.trim()) {
+      const q = queryParam.trim().toLowerCase();
+      products = products.filter(
+        (p) =>
+          p.title.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.subcategory.toLowerCase().includes(q) ||
+          p.seller.toLowerCase().includes(q)
+      );
+    }
 
     if (selectedCategories.length > 0) {
       products = products.filter((p) => selectedCategories.includes(p.category));
@@ -58,9 +83,10 @@ const Catalog = () => {
     }
 
     return products;
-  }, [selectedCategories, selectedConditions, selectedLocations, priceRange, sortBy]);
+  }, [selectedCategories, selectedConditions, selectedLocations, priceRange, sortBy, queryParam]);
 
   const activeFilters = [
+    ...(queryParam.trim() ? [`"${queryParam}"`] : []),
     ...selectedCategories,
     ...selectedConditions,
     ...selectedLocations,
@@ -70,6 +96,10 @@ const Catalog = () => {
   ];
 
   const removeFilter = (filter: string) => {
+    if (filter.startsWith('"') && filter.endsWith('"')) {
+      // Can't remove query param via state — user can clear search bar
+      return;
+    }
     if (selectedCategories.includes(filter)) {
       setSelectedCategories(selectedCategories.filter((c) => c !== filter));
     } else if (selectedConditions.includes(filter)) {
@@ -106,6 +136,11 @@ const Catalog = () => {
               onToggleFilters={() => setFiltersVisible(!filtersVisible)}
               filtersVisible={filtersVisible}
             />
+            {queryParam.trim() && (
+              <p className="text-sm text-muted-foreground mt-2">
+                Showing results for: <span className="font-medium text-foreground">"{queryParam}"</span>
+              </p>
+            )}
           </div>
 
           {/* Active filter tags */}

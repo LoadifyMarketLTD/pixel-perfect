@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, ArrowRight, ShieldCheck, Truck, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,41 +5,14 @@ import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import { mockProducts } from "@/data/mockProducts";
-
-interface CartItem {
-  product: typeof mockProducts[0];
-  quantity: number;
-}
-
-const initialCart: CartItem[] = [
-  { product: mockProducts[0], quantity: 1 },
-  { product: mockProducts[1], quantity: 2 },
-  { product: mockProducts[5], quantity: 1 },
-];
+import { useCart } from "@/contexts/CartContext";
+import { useState } from "react";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
+  const { cartItems, updateQuantity, removeFromCart, subtotal } = useCart();
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
 
-  const updateQuantity = (id: string, delta: number) => {
-    setCartItems((prev) =>
-      prev
-        .map((item) =>
-          item.product.id === id
-            ? { ...item, quantity: Math.max(0, item.quantity + delta) }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
-  };
-
-  const removeItem = (id: string) => {
-    setCartItems((prev) => prev.filter((item) => item.product.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
   const discount = promoApplied ? Math.round(subtotal * 0.1) : 0;
   const shipping = subtotal > 2000 ? 0 : 149;
   const vat = Math.round((subtotal - discount) * 0.2);
@@ -133,7 +105,7 @@ const Cart = () => {
                             </h3>
                           </Link>
                           <button
-                            onClick={() => removeItem(product.id)}
+                            onClick={() => removeFromCart(product.id)}
                             className="text-muted-foreground hover:text-destructive transition-colors shrink-0 p-1"
                             aria-label="Remove item"
                           >
