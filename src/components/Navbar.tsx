@@ -62,7 +62,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Catalog</Link>
-          <Link to="/deals" className="block text-sm font-medium text-muted-foreground">Deals</Link>
+          <Link to="/clearance" className="block text-sm font-medium text-muted-foreground">Deals</Link>
           <a href="#categories" className="block text-sm font-medium text-muted-foreground">Categories</a>
           <a href="#contact" className="block text-sm font-medium text-muted-foreground">Contact</a>
           <div className="flex gap-2 pt-2">
