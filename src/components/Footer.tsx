@@ -182,8 +182,8 @@ const Footer = () => {
                 Legal
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
-                <FooterExtLink>Terms &amp; Conditions</FooterExtLink>
-                <FooterExtLink>Privacy Policy</FooterExtLink>
+                <FooterLink to="/terms">Terms &amp; Conditions</FooterLink>
+                <FooterLink to="/privacy">Privacy Policy</FooterLink>
                 <FooterExtLink>Cookie Policy</FooterExtLink>
                 <FooterExtLink>Disclaimer</FooterExtLink>
                 <FooterExtLink>Returns Policy</FooterExtLink>
