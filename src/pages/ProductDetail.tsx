@@ -53,16 +53,17 @@ const ProductDetail = () => {
 
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          {/* Back link */}
-          <div className="py-4">
-            <Link
-              to="/catalog"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Catalog
-            </Link>
-          </div>
+          <BreadcrumbNav
+            items={[
+              { label: "Home", to: "/" },
+              { label: "Catalog", to: "/catalog" },
+              { label: product.category, to: "/catalog" },
+              { label: product.title },
+            ]}
+            showBack={true}
+            backLabel="Back to Catalog"
+            backTo="/catalog"
+          />
 
           {/* Main content */}
           <div className="grid lg:grid-cols-[1fr_420px] gap-8">
