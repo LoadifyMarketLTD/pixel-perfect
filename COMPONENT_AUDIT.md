@@ -70,11 +70,11 @@
 | Products | `pages/seller/SellerProducts.tsx` | ⚠️ Needs Wiring | Hardcoded product list |
 | Orders | `pages/seller/SellerOrders.tsx` | ⚠️ Needs Wiring | Hardcoded order list |
 | Reviews | `pages/seller/SellerReviewsPage.tsx` | ⚠️ Needs Wiring | Mock reviews |
-| Shipments | `pages/seller/SellerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Returns | `pages/seller/SellerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| RFQ / Quotes | `pages/seller/SellerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Profile | `pages/seller/SellerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Settings | `pages/seller/SellerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
+| Shipments | `pages/seller/SellerShipments.tsx` | ⚠️ Needs Wiring | Mock shipments with tracking |
+| Returns | `pages/seller/SellerReturns.tsx` | ⚠️ Needs Wiring | Mock returns with review flow |
+| RFQ / Quotes | `pages/seller/SellerRFQ.tsx` | ⚠️ Needs Wiring | Mock quotes with send flow |
+| Profile | `pages/seller/SellerProfile.tsx` | ⚠️ Needs Wiring | Editable form, mock data |
+| Settings | `pages/seller/SellerSettings.tsx` | ⚠️ Needs Wiring | Notifications, security, payouts |
 
 ## Buyer Dashboard
 
@@ -110,8 +110,8 @@
 | Status | Count |
 |---|---|
 | ✅ Ready (no changes needed) | **33** |
-| ⚠️ UI Complete, Needs Wiring | **18** |
-| 🔴 Placeholder | **16** |
+| ⚠️ UI Complete, Needs Wiring | **23** |
+| 🔴 Placeholder | **11** |
 | **Total** | **67** |
 
 ---
