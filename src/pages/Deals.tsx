@@ -165,6 +165,7 @@ const Deals = () => {
                   <Button variant="default" size="sm" className="text-xs bg-gradient-hero text-primary-foreground shadow-md">
                     Start Selling <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
+                </Link>
               </div>
               <CountdownBanner variant="inline" />
             </div>
