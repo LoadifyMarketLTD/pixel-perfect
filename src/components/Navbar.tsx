@@ -1,6 +1,7 @@
-import { Package, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/loadify-logo.png";
 
 const Navbar = () => {
