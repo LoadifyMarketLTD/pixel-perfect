@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Target date: 30 days from now (replace with a fixed date for production)
 const TARGET_DATE = new Date();
-TARGET_DATE.setDate(TARGET_DATE.getDate() + 14);
+TARGET_DATE.setDate(TARGET_DATE.getDate() + 30);
 const TARGET_TIME = TARGET_DATE.getTime();
 
 interface TimeLeft {
