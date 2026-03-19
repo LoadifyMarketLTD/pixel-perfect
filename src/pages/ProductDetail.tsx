@@ -94,7 +94,7 @@ const ProductDetail = () => {
                   <ul className="list-disc list-inside space-y-1">
                     <li>Collection available from {product.location}</li>
                     <li>UK mainland delivery available (quote on request)</li>
-                    <li>Pallets are stretch-wrapped and ready for transport</li>
+                    <li>Items are securely packaged and ready for transport</li>
                   </ul>
                 </div>
               </div>
