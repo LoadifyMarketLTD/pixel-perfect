@@ -46,17 +46,17 @@ const Signup = () => {
             </span>
           </div>
           <h2 className="font-display text-2xl font-bold text-primary-foreground">
-            Start Selling or Buying in Minutes
+            Join the UK Wholesale Marketplace
           </h2>
           <p className="text-primary-foreground/70 text-lg leading-relaxed">
-            Join 500+ verified sellers and thousands of buyers on the UK's fastest-growing wholesale marketplace.
+            Create your free account to start buying or selling wholesale, clearance and overstock goods.
           </p>
 
           <div className="space-y-4 pt-4 text-left">
             {[
-              "No listing fees for your first 30 days",
+              "Free to join — no upfront fees",
               "Buyer protection on every transaction",
-              "UK-wide delivery network included",
+              "Verified sellers and secure payments",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
