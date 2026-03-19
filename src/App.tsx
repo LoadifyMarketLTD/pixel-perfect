@@ -67,6 +67,12 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/returns" element={<ReturnsPolicy />} />
+          <Route path="/shipping" element={<ShippingPolicy />} />
+          <Route path="/buyer-terms" element={<BuyerTerms />} />
+          <Route path="/seller-terms" element={<SellerTerms />} />
 
           {/* Seller Dashboard */}
           <Route path="/seller" element={<SellerLayout />}>

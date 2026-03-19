@@ -204,8 +204,8 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-xs text-background/50 shrink-0">
               <Link to="/terms" className="hover:text-background transition-colors">Terms</Link>
               <Link to="/privacy" className="hover:text-background transition-colors">Privacy</Link>
-              <span className="cursor-default">Cookies</span>
-              <span className="cursor-default">Disclaimer</span>
+              <Link to="/cookies" className="hover:text-background transition-colors">Cookies</Link>
+              <Link to="/disclaimer" className="hover:text-background transition-colors">Disclaimer</Link>
               <Link to="/contact" className="hover:text-background transition-colors">Contact</Link>
             </div>
           </div>
