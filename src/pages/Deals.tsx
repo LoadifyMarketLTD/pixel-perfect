@@ -164,7 +164,6 @@ const Deals = () => {
             </div>
           </div>
         </div>
-        </div>
 
         {/* Sub-sections overview */}
         <div className="container mx-auto px-4 py-8">
