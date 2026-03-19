@@ -117,11 +117,10 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/catalog">Browse Marketplace</FooterLink>
+                <FooterLink to="/deals">Clearance &amp; Bulk Deals</FooterLink>
                 <FooterLink to="/catalog">Electronics</FooterLink>
                 <FooterLink to="/catalog">Fashion &amp; Clothing</FooterLink>
                 <FooterLink to="/catalog">Home &amp; Garden</FooterLink>
-                <FooterLink to="/catalog">Sports &amp; Leisure</FooterLink>
-                <FooterLink to="/catalog">Automotive</FooterLink>
                 <FooterLink to="/catalog">All Categories</FooterLink>
                 <FooterLink to="/dashboard/orders">Track Order</FooterLink>
                 <FooterLink to="/contact">Help &amp; FAQ</FooterLink>
