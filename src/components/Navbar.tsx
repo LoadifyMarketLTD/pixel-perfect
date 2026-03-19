@@ -22,16 +22,16 @@ const Navbar = () => {
         </div>
 
         {/* Desktop search */}
-        <NavbarSearch className="hidden md:block w-72 lg:w-96" />
+        <NavbarSearch className="hidden lg:block w-72 xl:w-96" />
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Catalog</Link>
           <Link to="/clearance" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Deals</Link>
           <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Categories</Link>
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link to="/cart" className="relative p-2 text-muted-foreground hover:text-foreground transition-colors">
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
@@ -44,8 +44,8 @@ const Navbar = () => {
           <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
         </div>
 
-        {/* Mobile buttons */}
-        <div className="flex md:hidden items-center gap-1">
+        {/* Mobile/tablet buttons */}
+        <div className="flex lg:hidden items-center gap-1">
           <button
             className="text-foreground p-2"
             onClick={() => { setMobileSearchOpen(!mobileSearchOpen); setMobileOpen(false); }}
@@ -63,14 +63,14 @@ const Navbar = () => {
 
       {/* Mobile search */}
       {mobileSearchOpen && (
-        <div className="md:hidden bg-card border-b border-border px-4 py-3">
+        <div className="lg:hidden bg-card border-b border-border px-4 py-3">
           <NavbarSearch className="w-full" onSelect={() => setMobileSearchOpen(false)} />
         </div>
       )}
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-card border-b border-border px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-card border-b border-border px-4 py-4 space-y-3">
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Catalog</Link>
           <Link to="/clearance" className="block text-sm font-medium text-muted-foreground">Deals</Link>
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Categories</Link>

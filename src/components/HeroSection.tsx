@@ -72,7 +72,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right — Hero Image */}
-          <div className="relative hidden lg:block">
+          <div className="relative hidden md:block">
             <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border border-border">
               <img
                 src={heroImg}
