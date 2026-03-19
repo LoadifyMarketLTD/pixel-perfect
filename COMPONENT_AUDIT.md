@@ -85,10 +85,10 @@
 | Orders | `pages/buyer/BuyerOrders.tsx` | ⚠️ Needs Wiring | Hardcoded orders |
 | Wishlist | `pages/buyer/BuyerWishlist.tsx` | ⚠️ Needs Wiring | Mock wishlist |
 | Addresses | `pages/buyer/BuyerAddresses.tsx` | ⚠️ Needs Wiring | Mock addresses |
-| Payments | `pages/buyer/BuyerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Reviews | `pages/buyer/BuyerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Profile | `pages/buyer/BuyerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Settings | `pages/buyer/BuyerPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
+| Payments | `pages/buyer/BuyerPayments.tsx` | ⚠️ Needs Wiring | Card management with visual cards |
+| Reviews | `pages/buyer/BuyerReviews.tsx` | ⚠️ Needs Wiring | Review history with stats |
+| Profile | `pages/buyer/BuyerProfile.tsx` | ⚠️ Needs Wiring | Editable form, mock data |
+| Settings | `pages/buyer/BuyerSettings.tsx` | ⚠️ Needs Wiring | Notifications, security, preferences |
 
 ## Admin Dashboard
 
@@ -110,8 +110,8 @@
 | Status | Count |
 |---|---|
 | ✅ Ready (no changes needed) | **33** |
-| ⚠️ UI Complete, Needs Wiring | **23** |
-| 🔴 Placeholder | **11** |
+| ⚠️ UI Complete, Needs Wiring | **27** |
+| 🔴 Placeholder | **7** |
 | **Total** | **67** |
 
 ---
