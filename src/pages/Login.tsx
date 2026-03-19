@@ -29,7 +29,7 @@ const Login = () => {
             </span>
           </div>
           <h2 className="font-display text-2xl font-bold text-primary-foreground">
-            The UK's #1 B2B Wholesale Marketplace
+            Your B2B Wholesale Marketplace
           </h2>
           <p className="text-primary-foreground/70 text-lg leading-relaxed">
             Access thousands of wholesale deals from verified UK suppliers at unbeatable prices.
