@@ -75,7 +75,7 @@ const ProductDetail = () => {
                 <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
                   <p>
                     This {product.condition.toLowerCase()} condition lot includes {product.unitCount}{" "}
-                    {product.unitCount === 1 ? "pallet" : "pallets"} of {product.category.toLowerCase()} items.
+                    {product.unitCount === 1 ? "lot" : "lots"} of {product.category.toLowerCase()} items.
                     Located in {product.location}, available for collection or delivery UK-wide.
                   </p>
                   <p>

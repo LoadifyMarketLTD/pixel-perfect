@@ -16,7 +16,7 @@ import clearanceImg from "@/assets/categories/clearance.jpg";
 export const mockProducts: Product[] = [
   {
     id: "1",
-    title: "Samsung Galaxy & iPhone Mixed Pallet - 50 Units Grade A/B",
+    title: "Samsung Galaxy & iPhone Mixed Lot - 50 Units Grade A/B",
     image: electronicsImg,
     price: 2450,
     originalPrice: 4200,
@@ -24,7 +24,7 @@ export const mockProducts: Product[] = [
     subcategory: "Phones & Tablets",
     condition: "Mixed",
     location: "Manchester",
-    seller: "TechPallets UK",
+    seller: "TechWholesale UK",
     sellerVerified: true,
     unitCount: 1,
     rating: 4.8,
@@ -50,7 +50,7 @@ export const mockProducts: Product[] = [
   },
   {
     id: "3",
-    title: "Home & Kitchen Appliances - Customer Returns Pallet",
+    title: "Home & Kitchen Appliances - Customer Returns Lot",
     image: returnsImg,
     price: 650,
     originalPrice: 1800,
@@ -67,7 +67,7 @@ export const mockProducts: Product[] = [
   },
   {
     id: "4",
-    title: "Premium Toy Pallet - LEGO, Hasbro, Mattel - 100+ Items",
+    title: "Premium Toy Bundle - LEGO, Hasbro, Mattel - 100+ Items",
     image: toysImg,
     price: 1200,
     originalPrice: 3200,
@@ -84,7 +84,7 @@ export const mockProducts: Product[] = [
   },
   {
     id: "5",
-    title: "Garden Furniture & BBQ Overstock - 3 Pallets",
+    title: "Garden Furniture & BBQ Overstock - 3 Lots",
     image: homeImg,
     price: 2100,
     originalPrice: 4800,
@@ -118,14 +118,14 @@ export const mockProducts: Product[] = [
   },
   {
     id: "7",
-    title: "Mixed Amazon Returns - General Merchandise x5 Pallets",
+    title: "Mixed Amazon Returns - General Merchandise x5 Lots",
     image: mixedPalletsImg,
     price: 3200,
-    category: "Mixed Pallets",
+    category: "Mixed Lots",
     subcategory: "Amazon Returns",
     condition: "Unchecked",
     location: "Manchester",
-    seller: "PalletKing",
+    seller: "WholesaleKing",
     sellerVerified: true,
     unitCount: 5,
     rating: 4.4,
@@ -168,7 +168,7 @@ export const mockProducts: Product[] = [
   },
   {
     id: "10",
-    title: "Baby Essentials Mixed Pallet - Pushchairs, Toys, Clothing",
+    title: "Baby Essentials Mixed Lot - Pushchairs, Toys, Clothing",
     image: babyImg,
     price: 750,
     originalPrice: 1900,
@@ -185,7 +185,7 @@ export const mockProducts: Product[] = [
   },
   {
     id: "11",
-    title: "Seasonal Overstock - Christmas & Easter Lines - 4 Pallets",
+    title: "Seasonal Overstock - Christmas & Easter Lines - 4 Lots",
     image: overstockImg,
     price: 1400,
     originalPrice: 5000,
