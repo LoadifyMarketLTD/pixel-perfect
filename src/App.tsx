@@ -19,6 +19,13 @@ import {
   SellerShipments, SellerReturns, SellerReviews,
   SellerRFQ, SellerProfile, SellerSettings,
 } from "./pages/seller/SellerPlaceholders.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
+import AdminApprovals from "./pages/admin/AdminApprovals.tsx";
+import {
+  AdminUsers, AdminProducts, AdminOrders, AdminReports,
+  AdminFlagged, AdminSupport, AdminSettings,
+} from "./pages/admin/AdminPlaceholders.tsx";
 
 const queryClient = new QueryClient();
 
