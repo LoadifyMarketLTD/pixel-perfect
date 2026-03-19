@@ -140,6 +140,7 @@ const categories = [
 ];
 
 const CategoriesSection = () => {
+  const navigate = useNavigate();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
