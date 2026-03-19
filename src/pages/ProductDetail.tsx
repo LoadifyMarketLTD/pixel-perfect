@@ -113,6 +113,7 @@ const ProductDetail = () => {
               <div className="lg:sticky lg:top-24 space-y-6">
                 <div className="bg-card rounded-xl border border-border p-6">
                   <ProductInfo
+                    product={product}
                     title={product.title}
                     price={product.price}
                     originalPrice={product.originalPrice}
