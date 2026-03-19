@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <div className="flex items-center gap-2">
           <img src={logo} alt="Loadify Market" className="h-9 w-9" />
-          <span className="font-display text-xl font-bold tracking-tight text-foreground">
+          <span className="font-display text-xl font-bold tracking-tight text-foreground whitespace-nowrap">
             Loadify <span className="text-primary">Market</span>
           </span>
         </div>
