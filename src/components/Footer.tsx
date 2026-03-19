@@ -165,8 +165,8 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/about">About Us</FooterLink>
                 <FooterLink to="/contact">Contact Us</FooterLink>
-                <FooterExtLink>Help Centre</FooterExtLink>
-                <FooterExtLink>Support</FooterExtLink>
+                <FooterLink to="/contact">Help Centre</FooterLink>
+                <FooterLink to="/contact">Support</FooterLink>
                 <FooterLink to="/contact">Business Enquiries</FooterLink>
               </ul>
             </div>
