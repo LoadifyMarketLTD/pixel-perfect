@@ -184,13 +184,13 @@ const CategoriesSection = () => {
                 {/* Expand button */}
                 <button
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                  className="w-full flex items-center justify-between gap-2 px-4 py-3 cursor-pointer hover:bg-muted/50 transition-colors"
+                  className="w-full flex items-center justify-between gap-2 px-3 py-2 cursor-pointer hover:bg-muted/50 transition-colors border-t border-border"
                 >
-                  <span className="text-xs font-medium text-muted-foreground">View Subcategories</span>
+                  <span className="text-xs font-medium text-muted-foreground">Subcategories</span>
                   {isExpanded ? (
-                    <ChevronUp className="h-4 w-4 text-muted-foreground shrink-0" />
+                    <ChevronUp className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                   ) : (
-                    <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
+                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                   )}
                 </button>
 
