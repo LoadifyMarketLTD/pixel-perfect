@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImg from "@/assets/hero-warehouse.jpg";
 
 const HeroSection = () => {
