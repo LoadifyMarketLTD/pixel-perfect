@@ -179,12 +179,12 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-background/60">
                 <FooterLink to="/terms">Terms &amp; Conditions</FooterLink>
                 <FooterLink to="/privacy">Privacy Policy</FooterLink>
-                <FooterExtLink>Cookie Policy</FooterExtLink>
-                <FooterExtLink>Disclaimer</FooterExtLink>
-                <FooterExtLink>Returns Policy</FooterExtLink>
-                <FooterExtLink>Shipping Policy</FooterExtLink>
-                <FooterExtLink>Buyer Terms</FooterExtLink>
-                <FooterExtLink>Seller Terms</FooterExtLink>
+                <FooterLink to="/cookies">Cookie Policy</FooterLink>
+                <FooterLink to="/disclaimer">Disclaimer</FooterLink>
+                <FooterLink to="/returns">Returns Policy</FooterLink>
+                <FooterLink to="/shipping">Shipping Policy</FooterLink>
+                <FooterLink to="/buyer-terms">Buyer Terms</FooterLink>
+                <FooterLink to="/seller-terms">Seller Terms</FooterLink>
               </ul>
             </div>
           </div>
