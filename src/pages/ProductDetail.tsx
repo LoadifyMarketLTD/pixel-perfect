@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ProductGallery from "@/components/product/ProductGallery";
 import ProductInfo from "@/components/product/ProductInfo";
 import SellerCard from "@/components/product/SellerCard";
+import ProductReviews from "@/components/product/ProductReviews";
 import ProductCard from "@/components/catalog/ProductCard";
 import { mockProducts } from "@/data/mockProducts";
 
@@ -98,6 +99,12 @@ const ProductDetail = () => {
                   </ul>
                 </div>
               </div>
+
+              {/* Reviews */}
+              <ProductReviews
+                productRating={product.rating}
+                reviewCount={product.reviewCount}
+              />
             </div>
 
             {/* Right: Info + Seller */}
