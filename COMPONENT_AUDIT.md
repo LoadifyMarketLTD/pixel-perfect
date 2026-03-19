@@ -97,21 +97,21 @@
 | Layout + Sidebar | `components/admin/*` | ✅ Ready | Shell ready |
 | Dashboard | `pages/admin/AdminDashboard.tsx` | ⚠️ Needs Wiring | Hardcoded stats |
 | Approvals | `pages/admin/AdminApprovals.tsx` | ⚠️ Needs Wiring | Mock approval queue |
-| Users | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Products | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Orders | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Reports | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Flagged | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Support | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
-| Settings | `pages/admin/AdminPlaceholders.tsx` | 🔴 Placeholder | Coming soon |
+| Users | `pages/admin/AdminUsers.tsx` | ⚠️ Needs Wiring | User management with roles, search, actions |
+| Products | `pages/admin/AdminProducts.tsx` | ⚠️ Needs Wiring | Product moderation with flag/approve/remove |
+| Orders | `pages/admin/AdminOrders.tsx` | ⚠️ Needs Wiring | Order management with dispute tracking |
+| Reports | `pages/admin/AdminReports.tsx` | ⚠️ Needs Wiring | KPIs, revenue, top sellers/categories |
+| Flagged | `pages/admin/AdminFlagged.tsx` | ⚠️ Needs Wiring | Flagged content with severity and review flow |
+| Support | `pages/admin/AdminSupport.tsx` | ⚠️ Needs Wiring | Support tickets with message thread |
+| Settings | `pages/admin/AdminSettings.tsx` | ⚠️ Needs Wiring | Feature toggles, API keys, platform config |
 
 ## Summary
 
 | Status | Count |
 |---|---|
 | ✅ Ready (no changes needed) | **33** |
-| ⚠️ UI Complete, Needs Wiring | **27** |
-| 🔴 Placeholder | **7** |
+| ⚠️ UI Complete, Needs Wiring | **34** |
+| 🔴 Placeholder | **0** |
 | **Total** | **67** |
 
 ---
