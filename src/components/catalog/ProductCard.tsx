@@ -17,6 +17,7 @@ export interface Product {
   sellerVerified: boolean;
   unitCount: number;
   rating: number;
+  reviewCount?: number;
   views: number;
   listed: string;
 }
