@@ -29,10 +29,10 @@ const TrustSection = () => {
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star
                   key={i}
-                  className={`h-3 w-3 ${i <= 4 ? "fill-amber-400 text-amber-400" : "fill-amber-400/50 text-amber-400/50"}`}
+                  className="h-3 w-3 fill-amber-400 text-amber-400"
                 />
               ))}
-              <span className="text-xs font-semibold text-foreground ml-1">4.8</span>
+              <span className="text-xs font-semibold text-foreground ml-1">5.0</span>
             </div>
           </div>
         </div>
