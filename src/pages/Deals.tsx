@@ -143,21 +143,23 @@ const Deals = () => {
                 <span className="text-sm font-semibold uppercase tracking-wider text-primary">Marketplace Section</span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-3">
-                Pallets, Clearance & Bulk Deals
+                Pallets, Clearance &amp; Bulk Deals
               </h1>
-              <p className="text-muted-foreground text-base leading-relaxed mb-4">
-                Browse listings from sellers offering pallets, customer returns, overstock, and clearance stock.
-                All products are listed by independent sellers — Loadify Market is a platform that connects buyers with sellers.
+              <p className="text-muted-foreground text-base leading-relaxed mb-2">
+                Browse thousands of listings from UK sellers or sell your excess stock fast.
+              </p>
+              <p className="text-xs text-muted-foreground/70 mb-5">
+                This is a marketplace section where sellers list stock and buyers connect directly.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link to="/catalog">
+                <a href="#listings">
                   <Button variant="outline" size="sm" className="text-xs bg-background/80 backdrop-blur-sm">
-                    ← Back to Full Marketplace
+                    Browse Deals
                   </Button>
-                </Link>
+                </a>
                 <Link to="/signup">
                   <Button variant="default" size="sm" className="text-xs bg-gradient-hero text-primary-foreground">
-                    Have Stock to Clear? Start Selling <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                    Start Selling <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
                 </Link>
               </div>
