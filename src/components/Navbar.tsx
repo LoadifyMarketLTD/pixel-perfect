@@ -29,6 +29,7 @@ const Navbar = () => {
           <Link to="/clearance" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Deals</Link>
           <Link to="/catalog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Categories</Link>
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
+          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">About</Link>
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
@@ -75,6 +76,7 @@ const Navbar = () => {
           <Link to="/clearance" className="block text-sm font-medium text-muted-foreground">Deals</Link>
           <Link to="/catalog" className="block text-sm font-medium text-muted-foreground">Categories</Link>
           <Link to="/contact" className="block text-sm font-medium text-muted-foreground">Contact</Link>
+          <Link to="/about" className="block text-sm font-medium text-muted-foreground">About</Link>
           <div className="flex gap-2 pt-2">
             <Button variant="ghost" size="sm" className="flex-1" asChild><Link to="/login">Sign In</Link></Button>
             <Button size="sm" className="flex-1 bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
