@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import logo from "@/assets/loadify-logo.png";
+import authBg from "@/assets/auth-signup-bg.jpg";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
