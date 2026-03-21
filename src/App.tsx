@@ -157,6 +157,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
     </CartProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
