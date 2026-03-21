@@ -5,9 +5,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import CookieConsent from "@/components/CookieConsent";
-
-// Critical path — loaded eagerly
 import Index from "./pages/Index";
 
 // Lazy-loaded pages
