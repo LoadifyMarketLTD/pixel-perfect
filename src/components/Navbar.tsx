@@ -1,25 +1,33 @@
-import { Menu, X, Search, ShoppingCart } from "lucide-react";
+import { Menu, X, Search, ShoppingCart, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "@/assets/loadify-logo.png";
 import NavbarSearch from "@/components/NavbarSearch";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const { cartCount } = useCart();
+  const { isAuthenticated, user, clearSession } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    clearSession();
+    navigate("/");
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Loadify Market" className="h-9 w-9" />
           <span className="font-display text-xl font-bold tracking-tight text-foreground whitespace-nowrap">
             Loadify <span className="text-primary">Market</span>
           </span>
-        </div>
+        </Link>
 
         {/* Desktop search */}
         <NavbarSearch className="hidden lg:block w-48 xl:w-72 2xl:w-96" />
@@ -41,8 +49,29 @@ const Navbar = () => {
               </span>
             )}
           </Link>
-          <Button variant="ghost" size="sm" asChild><Link to="/login">Sign In</Link></Button>
-          <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
+
+          {isAuthenticated ? (
+            <>
+              <Link to="/dashboard" className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <User className="h-4 w-4" />
+                <span className="max-w-[100px] truncate">{user?.name || "Account"}</span>
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleLogout}
+                className="text-muted-foreground hover:text-destructive gap-1.5"
+              >
+                <LogOut className="h-4 w-4" />
+                Logout
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" asChild><Link to="/login">Sign In</Link></Button>
+              <Button size="sm" className="bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
+            </>
+          )}
         </div>
 
         {/* Mobile/tablet buttons */}
@@ -78,8 +107,19 @@ const Navbar = () => {
           <Link to="/contact" className="block text-sm font-medium text-muted-foreground">Contact</Link>
           <Link to="/about" className="block text-sm font-medium text-muted-foreground">About</Link>
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1" asChild><Link to="/login">Sign In</Link></Button>
-            <Button size="sm" className="flex-1 bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
+            {isAuthenticated ? (
+              <>
+                <Button variant="ghost" size="sm" className="flex-1" asChild><Link to="/dashboard">My Account</Link></Button>
+                <Button variant="outline" size="sm" className="flex-1 text-destructive" onClick={handleLogout}>
+                  <LogOut className="h-4 w-4 mr-1" /> Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="ghost" size="sm" className="flex-1" asChild><Link to="/login">Sign In</Link></Button>
+                <Button size="sm" className="flex-1 bg-gradient-hero text-primary-foreground" asChild><Link to="/signup">Get Started</Link></Button>
+              </>
+            )}
           </div>
         </div>
       )}

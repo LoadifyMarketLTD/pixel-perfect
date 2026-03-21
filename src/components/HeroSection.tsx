@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, Zap, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import CountdownBanner from "@/components/CountdownBanner";
 import heroImg from "@/assets/hero-seller-dashboard.jpg";
 
 const HeroSection = () => {
@@ -71,8 +72,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right — Hero Image */}
-          <div className="relative hidden md:block">
+          {/* Right — Hero Image + Countdown */}
+          <div className="relative hidden md:flex flex-col gap-4">
             <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)] border border-border">
               <img
                 src={heroImg}
@@ -80,6 +81,9 @@ const HeroSection = () => {
                 className="w-full h-auto"
               />
             </div>
+
+            {/* Countdown — visible immediately in hero */}
+            <CountdownBanner variant="inline" />
           </div>
         </div>
       </div>

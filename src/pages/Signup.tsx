@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Mail, Lock, User, Building2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/loadify-logo.png";
 import authBg from "@/assets/auth-signup-bg.jpg";
 
@@ -16,6 +17,8 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const { setSession } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -23,7 +26,18 @@ const Signup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Signup submitted", formData);
+    if (!formData.email || !formData.password || !formData.name) {
+      toast({ title: "Error", description: "Please fill in all required fields.", variant: "destructive" });
+      return;
+    }
+    if (formData.password.length < 6) {
+      toast({ title: "Error", description: "Password must be at least 6 characters.", variant: "destructive" });
+      return;
+    }
+    // TODO: Replace with real Supabase auth call
+    setSession({ id: "new-user", email: formData.email, name: formData.name, role: "buyer" });
+    toast({ title: "Account created!", description: "Welcome to Loadify Market." });
+    navigate("/dashboard", { replace: true });
   };
 
   const passwordStrength = (pw: string) => {
