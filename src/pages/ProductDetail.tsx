@@ -1,7 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useSearchParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
+import BreadcrumbNav, { buildProductBreadcrumbs } from "@/components/BreadcrumbNav";
 import ProductGallery from "@/components/product/ProductGallery";
 import ProductInfo from "@/components/product/ProductInfo";
 import SellerCard from "@/components/product/SellerCard";
