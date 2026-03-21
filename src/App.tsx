@@ -125,8 +125,8 @@ const App = () => (
             <Route path="settings" element={<SellerSettings />} />
           </Route>
 
-          {/* Admin Dashboard */}
-          <Route path="/admin" element={<AdminLayout />}>
+          {/* Admin Dashboard — Protected */}
+          <Route path="/admin" element={<ProtectedRoute allowedRoles={["admin", "owner"]}><AdminLayout /></ProtectedRoute>}>
             <Route index element={<AdminDashboard />} />
             <Route path="approvals" element={<AdminApprovals />} />
             <Route path="users" element={<AdminUsers />} />
