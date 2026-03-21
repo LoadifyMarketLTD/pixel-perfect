@@ -160,12 +160,13 @@ const Category = () => {
           {/* Sort controls */}
           <div className="mb-6">
             <CatalogHeader
-              totalProducts={filtered.length}
+              totalResults={filtered.length}
               sortBy={sortBy}
               setSortBy={setSortBy}
               viewMode={viewMode}
               setViewMode={setViewMode}
               onToggleFilters={() => {}}
+              filtersVisible={false}
             />
           </div>
 
