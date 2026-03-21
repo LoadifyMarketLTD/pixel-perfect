@@ -20,6 +20,7 @@ const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout"));
 const Deals = lazy(() => import("./pages/Deals"));
+const Category = lazy(() => import("./pages/Category"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
@@ -98,6 +99,7 @@ const App = () => (
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/clearance" element={<Deals />} />
+          <Route path="/category/:slug" element={<Category />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/terms" element={<TermsAndConditions />} />
