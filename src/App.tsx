@@ -138,8 +138,8 @@ const App = () => (
             <Route path="settings" element={<AdminSettings />} />
           </Route>
 
-          {/* Buyer Dashboard */}
-          <Route path="/dashboard" element={<BuyerLayout />}>
+          {/* Buyer Dashboard — Protected */}
+          <Route path="/dashboard" element={<ProtectedRoute><BuyerLayout /></ProtectedRoute>}>
             <Route index element={<BuyerDashboard />} />
             <Route path="orders" element={<BuyerOrders />} />
             <Route path="wishlist" element={<BuyerWishlist />} />
