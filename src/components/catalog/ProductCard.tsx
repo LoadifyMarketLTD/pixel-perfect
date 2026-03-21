@@ -30,10 +30,13 @@ const conditionColor: Record<string, string> = {
   "Damaged Packaging": "bg-red-500/10 text-red-700 border-red-200",
 };
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({ product, flowRef }: { product: Product; flowRef?: string }) => {
   const discount = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
+  const productLink = flowRef
+    ? `/product/${product.id}?ref=${flowRef}`
+    : `/product/${product.id}`;
 
   return (
     <div className="group bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-elevated transition-all duration-300 overflow-hidden">
@@ -108,7 +111,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         </div>
 
-        <Link to={`/product/${product.id}`}>
+        <Link to={productLink}>
           <Button className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-opacity text-sm" size="sm">
             View Details
           </Button>

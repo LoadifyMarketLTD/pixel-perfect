@@ -1,7 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useSearchParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
+import BreadcrumbNav, { buildProductBreadcrumbs } from "@/components/BreadcrumbNav";
 import ProductGallery from "@/components/product/ProductGallery";
 import ProductInfo from "@/components/product/ProductInfo";
 import SellerCard from "@/components/product/SellerCard";
@@ -16,6 +16,8 @@ import overstockImg from "@/assets/categories/overstock.jpg";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const fromClearance = searchParams.get("ref") === "clearance";
   const product = mockProducts.find((p) => p.id === id);
 
   if (!product) {
@@ -54,15 +56,13 @@ const ProductDetail = () => {
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
           <BreadcrumbNav
-            items={[
-              { label: "Home", to: "/" },
-              { label: "Catalog", to: "/catalog" },
-              { label: product.category, to: "/catalog" },
-              { label: product.title },
-            ]}
+            items={buildProductBreadcrumbs(
+              { title: product.title, category: product.category, subcategory: product.subcategory },
+              fromClearance
+            )}
             showBack={true}
-            backLabel="Back to Catalog"
-            backTo="/catalog"
+            backLabel={fromClearance ? "Back to Clearance" : "Back to Catalog"}
+            backTo={fromClearance ? "/clearance" : "/catalog"}
           />
 
           {/* Main content */}
@@ -144,8 +144,8 @@ const ProductDetail = () => {
               <h2 className="font-display text-xl font-bold text-foreground mb-6">Similar Listings</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {relatedProducts.map((p) => (
-                  <Link key={p.id} to={`/product/${p.id}`}>
-                    <ProductCard product={p} />
+                  <Link key={p.id} to={`/product/${p.id}${fromClearance ? "?ref=clearance" : ""}`}>
+                    <ProductCard product={p} flowRef={fromClearance ? "clearance" : undefined} />
                   </Link>
                 ))}
               </div>

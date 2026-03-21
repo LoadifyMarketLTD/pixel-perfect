@@ -135,7 +135,6 @@ const Deals = () => {
               <BreadcrumbNav
                 items={[
                   { label: "Home", to: "/" },
-                  { label: "Catalog", to: "/catalog" },
                   { label: "Clearance" },
                 ]}
                 showBack={false}
@@ -314,7 +313,7 @@ const Deals = () => {
                   }
                 >
                   {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} flowRef="clearance" />
                   ))}
                 </div>
               )}
