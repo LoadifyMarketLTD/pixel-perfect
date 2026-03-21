@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/loadify-logo.png";
 import authBg from "@/assets/auth-login-bg.jpg";
 
@@ -12,10 +13,22 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setSession } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as { from?: string })?.from || "/dashboard";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login submitted", { email, password });
+    if (!email || !password) {
+      toast({ title: "Error", description: "Please enter email and password.", variant: "destructive" });
+      return;
+    }
+    // TODO: Replace with real Supabase auth call
+    // For now, simulate login and set session
+    setSession({ id: "demo-user", email, name: email.split("@")[0], role: "buyer" });
+    toast({ title: "Welcome back!", description: "You have been signed in successfully." });
+    navigate(from, { replace: true });
   };
 
   return (

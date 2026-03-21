@@ -5,9 +5,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import CookieConsent from "@/components/CookieConsent";
-
-// Critical path — loaded eagerly
 import Index from "./pages/Index";
 
 // Lazy-loaded pages
@@ -81,6 +81,7 @@ const PageLoader = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <AuthProvider>
     <CartProvider>
     <TooltipProvider>
       <Toaster />
@@ -111,8 +112,8 @@ const App = () => (
           <Route path="/buyer-terms" element={<BuyerTerms />} />
           <Route path="/seller-terms" element={<SellerTerms />} />
 
-          {/* Seller Dashboard */}
-          <Route path="/seller" element={<SellerLayout />}>
+          {/* Seller Dashboard — Protected */}
+          <Route path="/seller" element={<ProtectedRoute allowedRoles={["seller", "admin", "owner"]}><SellerLayout /></ProtectedRoute>}>
             <Route index element={<SellerDashboard />} />
             <Route path="products" element={<SellerProducts />} />
             <Route path="orders" element={<SellerOrders />} />
@@ -124,8 +125,8 @@ const App = () => (
             <Route path="settings" element={<SellerSettings />} />
           </Route>
 
-          {/* Admin Dashboard */}
-          <Route path="/admin" element={<AdminLayout />}>
+          {/* Admin Dashboard — Protected */}
+          <Route path="/admin" element={<ProtectedRoute allowedRoles={["admin", "owner"]}><AdminLayout /></ProtectedRoute>}>
             <Route index element={<AdminDashboard />} />
             <Route path="approvals" element={<AdminApprovals />} />
             <Route path="users" element={<AdminUsers />} />
@@ -137,8 +138,8 @@ const App = () => (
             <Route path="settings" element={<AdminSettings />} />
           </Route>
 
-          {/* Buyer Dashboard */}
-          <Route path="/dashboard" element={<BuyerLayout />}>
+          {/* Buyer Dashboard — Protected */}
+          <Route path="/dashboard" element={<ProtectedRoute><BuyerLayout /></ProtectedRoute>}>
             <Route index element={<BuyerDashboard />} />
             <Route path="orders" element={<BuyerOrders />} />
             <Route path="wishlist" element={<BuyerWishlist />} />
@@ -156,6 +157,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
     </CartProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
