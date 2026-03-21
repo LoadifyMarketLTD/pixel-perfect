@@ -202,7 +202,10 @@ const CategoriesSection = () => {
                       {cat.subcategories.map((sub) => (
                         <li key={sub}>
                           <button
-                            onClick={() => navigate(`/catalog?category=${encodeURIComponent(cat.label)}`)}
+                            onClick={() => {
+                              const slug = cat.label.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+                              navigate(`/category/${slug}?sub=${encodeURIComponent(sub)}`);
+                            }}
                             className="w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors py-1 px-3 rounded-md hover:bg-primary/5"
                           >
                             {sub}
