@@ -16,6 +16,8 @@ import overstockImg from "@/assets/categories/overstock.jpg";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const fromClearance = searchParams.get("ref") === "clearance";
   const product = mockProducts.find((p) => p.id === id);
 
   if (!product) {
