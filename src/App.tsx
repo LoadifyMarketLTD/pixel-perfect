@@ -112,8 +112,8 @@ const App = () => (
           <Route path="/buyer-terms" element={<BuyerTerms />} />
           <Route path="/seller-terms" element={<SellerTerms />} />
 
-          {/* Seller Dashboard */}
-          <Route path="/seller" element={<SellerLayout />}>
+          {/* Seller Dashboard — Protected */}
+          <Route path="/seller" element={<ProtectedRoute allowedRoles={["seller", "admin", "owner"]}><SellerLayout /></ProtectedRoute>}>
             <Route index element={<SellerDashboard />} />
             <Route path="products" element={<SellerProducts />} />
             <Route path="orders" element={<SellerOrders />} />
