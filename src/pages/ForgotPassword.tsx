@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import logo from "@/assets/loadify-logo.png";
+import authBg from "@/assets/auth-login-bg.jpg";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -20,8 +21,9 @@ const ForgotPassword = () => {
   return (
     <div className="min-h-screen flex">
       {/* Left — branding panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-hero relative items-center justify-center p-12">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] opacity-5 bg-cover" />
+      <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center p-12">
+        <img src={authBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
         <div className="relative z-10 max-w-md text-center space-y-6">
           <div className="flex items-center justify-center gap-3 mb-8">
             <img src={logo} alt="Loadify Market" className="h-12 w-12" />
