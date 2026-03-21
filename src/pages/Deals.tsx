@@ -135,7 +135,6 @@ const Deals = () => {
               <BreadcrumbNav
                 items={[
                   { label: "Home", to: "/" },
-                  { label: "Catalog", to: "/catalog" },
                   { label: "Clearance" },
                 ]}
                 showBack={false}
