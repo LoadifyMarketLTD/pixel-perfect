@@ -81,6 +81,7 @@ const PageLoader = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <AuthProvider>
     <CartProvider>
     <TooltipProvider>
       <Toaster />
