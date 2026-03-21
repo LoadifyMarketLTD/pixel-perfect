@@ -111,7 +111,7 @@ const ProductCard = ({ product, flowRef }: { product: Product; flowRef?: string 
           </div>
         </div>
 
-        <Link to={`/product/${product.id}`}>
+        <Link to={productLink}>
           <Button className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 transition-opacity text-sm" size="sm">
             View Details
           </Button>
