@@ -56,15 +56,13 @@ const ProductDetail = () => {
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
           <BreadcrumbNav
-            items={[
-              { label: "Home", to: "/" },
-              { label: "Catalog", to: "/catalog" },
-              { label: product.category, to: "/catalog" },
-              { label: product.title },
-            ]}
+            items={buildProductBreadcrumbs(
+              { title: product.title, category: product.category, subcategory: product.subcategory },
+              fromClearance
+            )}
             showBack={true}
-            backLabel="Back to Catalog"
-            backTo="/catalog"
+            backLabel={fromClearance ? "Back to Clearance" : "Back to Catalog"}
+            backTo={fromClearance ? "/clearance" : "/catalog"}
           />
 
           {/* Main content */}
