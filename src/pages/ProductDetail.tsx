@@ -144,8 +144,8 @@ const ProductDetail = () => {
               <h2 className="font-display text-xl font-bold text-foreground mb-6">Similar Listings</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {relatedProducts.map((p) => (
-                  <Link key={p.id} to={`/product/${p.id}`}>
-                    <ProductCard product={p} />
+                  <Link key={p.id} to={`/product/${p.id}${fromClearance ? "?ref=clearance" : ""}`}>
+                    <ProductCard product={p} flowRef={fromClearance ? "clearance" : undefined} />
                   </Link>
                 ))}
               </div>

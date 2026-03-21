@@ -120,7 +120,7 @@ const Catalog = () => {
           <BreadcrumbNav
             items={[
               { label: "Home", to: "/" },
-              { label: "Catalog" },
+              { label: "Marketplace" },
             ]}
             showBack={true}
             backLabel="Back"
